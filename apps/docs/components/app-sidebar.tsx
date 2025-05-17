@@ -1,77 +1,18 @@
 "use client"
 
 import * as React from "react"
-import {
-	Bot,
-	SquareTerminal,
-} from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
+import { ROUTES } from '@/lib/routes-config'
 import {
 	Sidebar,
 	SidebarContent,
+	SidebarInput,
 	SidebarHeader,
 	SidebarMenu,
 	SidebarMenuButton,
 	SidebarMenuItem,
 } from "@/components/ui/sidebar"
-
-const data = {
-	navMain: [
-		{
-			title: "Components",
-			icon: SquareTerminal,
-			items: [
-				{
-					title: "Menu (Dropdown)",
-					url: "/menu",
-				},
-				{
-					title: "Listbox (Select)",
-					url: "/listbox",
-				},
-				{
-					title: "ComboxBox (Autocomplete)",
-					url: "/combox",
-				},
-				{
-					title: "Switch (Toggle)",
-					url: "/switch",
-				},
-				{
-					title: "Disclosure",
-					url: "/disclosure",
-				},
-				{
-					title: "Radio Group",
-					url: "/radio-group",
-				},
-				{
-					title: "Tabs",
-					url: "/tabs",
-				},
-			],
-		},
-		{
-			title: "Buttons",
-			icon: Bot,
-			items: [
-				{
-					title: "Genesis",
-					url: "/genesis",
-				},
-				{
-					title: "Explorer",
-					url: "/explorer",
-				},
-				{
-					title: "Quantum",
-					url: "/quantum",
-				},
-			],
-		},
-	]
-}
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	return (
@@ -82,10 +23,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 			<SidebarHeader>
 				<SidebarMenu>
 					<SidebarMenuItem>
-						<SidebarMenuButton size="lg" asChild>
+						<SidebarMenuButton size="lg" asChild className="border border-border">
 							<a href="#">
 								<div className="grid flex-1 text-left text-sm leading-tight">
-									<span className="truncate font-medium">Search bar</span>
+									<span className="truncate font-medium">Search...</span>
 								</div>
 							</a>
 						</SidebarMenuButton>
@@ -93,7 +34,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 				</SidebarMenu>
 			</SidebarHeader>
 			<SidebarContent>
-				<NavMain items={data.navMain} />
+				<NavMain items={ROUTES} />
 			</SidebarContent>
 		</Sidebar>
 	)

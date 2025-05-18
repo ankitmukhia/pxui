@@ -219,3 +219,25 @@
     @apply bg-background text-foreground;
   }
 }
+
+figure {
+	background-color: rgb(61, 61, 61, 0.13);
+	border: 1px solid rgba(104, 104, 104, 0.1);
+	border-radius: 0.4rem; 
+}
+
+figcaption {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 0.5rem 1rem;
+	font-size: 0.8rem;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 1rem 0;
+	font-size: 1rem;
+}
+ 
+pre [data-line] {
+  padding: 0 1rem;
+}

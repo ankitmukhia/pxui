@@ -1,66 +1,13 @@
 ---
 title: Installation
-description: Create a new Next.js application with the `create-next-app` CLI, and set up TypeScript, ESLint, and Module Path Aliases.
+description: Install with ease 
 status: published
 links: /docs/installation
 ---
 
 
-## System requirements
+## Installation
 
-Before you begin, make sure your system meets the following requirements:
-
-- [Node.js 18.18](https://nodejs.org/) or later.
-- macOS, Windows (including WSL), or Linux.
-
-## Automatic installation
-
-The quickest way to create a new Next.js app is using [`create-next-app`](/docs/app/api-reference/cli/create-next-app), which sets up everything automatically for you. To create a project, run:
-
-```bash filename="Terminal"
+```bash
 npx create-next-app@latest
 ```
-
-On installation, you'll see the following prompts:
-
-```txt filename="Terminal"
-What is your project named? my-app
-Would you like to use TypeScript? No / Yes
-Would you like to use ESLint? No / Yes
-Would you like to use Tailwind CSS? No / Yes
-Would you like your code inside a `src/` directory? No / Yes
-Would you like to use App Router? (recommended) No / Yes
-Would you like to use Turbopack for `next dev`?  No / Yes
-Would you like to customize the import alias (`@/*` by default)? No / Yes
-What import alias would you like configured? @/*
-```
-
-After the prompts, [`create-next-app`](/docs/app/api-reference/cli/create-next-app) will create a folder with your project name and install the required dependencies.
-
-## Manual installation
-
-To manually create a new Next.js app, install the required packages:
-
-```bash filename="Terminal"
-npm install next@latest react@latest react-dom@latest
-```
-
-Then, add the following scripts to your `package.json` file:
-
-```json filename="package.json"
-{
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  }
-}
-```
-
-These scripts refer to the different stages of developing an application:
-
-- `next dev`: Starts the development server.
-- `next build`: Builds the application for production.
-- `next start`: Starts the production server.
-- `next lint`: Runs ESLint.

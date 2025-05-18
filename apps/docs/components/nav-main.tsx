@@ -1,6 +1,8 @@
 "use client"
 
+import { usePathname } from 'next/navigation'
 import { Routes } from '@/lib/routes-config'
+import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import {
 	SidebarGroup,
@@ -17,13 +19,17 @@ export function NavMain({
 }: {
 	items: Routes[]
 }) {
+	const url = usePathname()
+	const pathname = url.replace('/docs', "")
 	return (
 		<SidebarGroup>
 			<SidebarMenu className="tracking-wider">
 				{items.map((item) => {
 					return (
 						<SidebarMenuItem key={item.title}>
-							<SidebarMenuButton asChild tooltip={item.title}>
+							<SidebarMenuButton asChild tooltip={item.title} className={cn("", {
+								"bg-teal-600/10 text-teal-500/90 font-bold": pathname === item?.href
+							})}>
 								{item.href ? (
 									<Link href={`/docs/${item.href}`}>
 										<span>{item.title}</span>
@@ -38,7 +44,7 @@ export function NavMain({
 										<SidebarMenuSub>
 											{item.items?.map((subItem) => (
 												<SidebarMenuSubItem key={subItem.title}>
-													<SidebarMenuSubButton asChild>
+													<SidebarMenuSubButton asChild className={pathname === subItem.href ? "bg-teal-600/10 text-teal-500/90" : ""}>
 														<Link href={`/docs/${subItem.href}`}>
 															<span>{subItem.title}</span>
 														</Link>

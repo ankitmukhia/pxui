@@ -12,10 +12,10 @@ export default function DocsLayout({ children}: {
 				<div className="flex flex-1">
 					<AppSidebar />
 
-					<SidebarInset>
-						<div className="flex flex-1 flex-col gap-4 p-4">
+					<SidebarInset className="max-w-[54rem] mx-auto">
+						<div className="flex flex-1 flex-col gap-4 p-4"> 
 							<div className="min-h-[100vh] flex-1 rounded-xl md:min-h-min">
-								<div className="flex flex-col gap-2 p-4">
+								<div className="flex flex-col gap-4 p-4">
 									{children}
 								</div>
 							</div>

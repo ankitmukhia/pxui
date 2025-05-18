@@ -24,9 +24,6 @@ export const ROUTES: Routes[] = [
     items: [
       { title: "Menu (Dropdown)", href: "/menu" },
       { title: "Listbox (Select)", href: "/listbox" },
-      { title: "ComboBox", href: "/combobox" },
-      { title: "Switch (Toggle)", href: "/toggle" },
-      { title: "Tabs", href: "/tabs" },
     ],
   },
   {

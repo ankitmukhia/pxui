@@ -2,7 +2,6 @@
 
 import { usePathname } from 'next/navigation'
 import { Routes } from '@/lib/routes-config'
-import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import {
 	SidebarGroup,
@@ -19,33 +18,36 @@ export function NavMain({
 }: {
 	items: Routes[]
 }) {
-	const url = usePathname()
-	const pathname = url.replace('/docs', "")
+	const pathname = usePathname()
+
 	return (
 		<SidebarGroup>
 			<SidebarMenu className="tracking-wider">
 				{items.map((item) => {
+					console.log("pathname: ", pathname)
 					return (
 						<SidebarMenuItem key={item.title}>
-							<SidebarMenuButton asChild tooltip={item.title} className={cn("", {
-								"bg-teal-600/10 text-teal-500/90 font-bold": pathname === item?.href
-							})}>
-								{item.href ? (
-									<Link href={`/docs/${item.href}`}>
+							{item.href ? (
+								<SidebarMenuButton asChild isActive={pathname === item.href} tooltip={item.title}>
+									{item.href ? (
+										<Link href={item.href}>
+											<span>{item.title}</span>
+										</Link>
+									) : (
 										<span>{item.title}</span>
-									</Link>
-								) : (
-									<span>{item.title}</span>
-								)}
-							</SidebarMenuButton>
+									)}
+								</SidebarMenuButton>
+							) : (
+								<span className="flex w-full items-center gap-2 overflow-hidden p-2 text-sm">{item.title}</span>
+							)}
 							{
 								item.items?.length ? (
 									<>
 										<SidebarMenuSub>
 											{item.items?.map((subItem) => (
 												<SidebarMenuSubItem key={subItem.title}>
-													<SidebarMenuSubButton asChild className={pathname === subItem.href ? "bg-teal-600/10 text-teal-500/90" : ""}>
-														<Link href={`/docs/${subItem.href}`}>
+													<SidebarMenuSubButton asChild isActive={pathname === subItem.href}>
+														<Link href={subItem.href!}>
 															<span>{subItem.title}</span>
 														</Link>
 													</SidebarMenuSubButton>

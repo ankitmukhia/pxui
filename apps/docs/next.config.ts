@@ -1,6 +1,24 @@
 import type { NextConfig } from "next";
 import { withContentlayer } from "next-contentlayer2";
 
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "images.unsplash.com",
+			}
+		]
+	},
+  async redirects() {
+    return [
+      {
+        source: "/docs",
+        destination: "/docs/introduction",
+        permanent: true,
+      },
+    ];
+  },
+};
 
 export default withContentlayer(nextConfig);

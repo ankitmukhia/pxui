@@ -1,17 +1,15 @@
 import { allUis } from 'contentlayer/generated'
-import { Docs } from './Docs'
 import { notFound } from 'next/navigation'
+import { Docs } from './Docs'
 
 interface Params {
 	params: Promise<{ slug: string[] }>
 }
 
 export default async function Page({ params }: Params) {
-	const slug = (await params).slug 
+	const slug = (await params).slug?.join("/") ?? ""
 
-	if(!slug) notFound()
-
-	const ui = allUis.filter((p) => p.status === "published").find((p) => p.slug === slug[0])
+	const ui = allUis.filter((f) => f.status === "published").find((f) => f.slug === slug)
 
 	if (!ui) notFound()
 

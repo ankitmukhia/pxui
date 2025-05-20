@@ -118,7 +118,11 @@
 
   --destructive: oklch(0.704 0.191 22.216);
 
-	--border: oklch(51.73% 0.000 0 / 10%);
+	--border: oklch(0.52 0 0 / 10%);
+
+	--active-bg: oklch(0.7 0.123 182.5 / 10%);
+
+	--active-text: oklch(0.78 0.1325 181.91); 
 
   --input: oklch(1 0 0 / 15%);
 
@@ -171,6 +175,10 @@
   --color-input: var(--input);
 
   --color-border: var(--border);
+
+	--color-active-bg: var(--active-bg);
+
+	--color-active-text: var(--active-text);
 
   --color-destructive: var(--destructive);
 

@@ -1,6 +1,6 @@
 import { makeSource } from "contentlayer2/source-files";
 import rehypePreetyCode from "rehype-pretty-code";
-import { Ui } from "./contents/definations/ui";
+import { Ui } from "./content/definations/ui";
 
 const options = {
 	theme: "one-dark-pro",
@@ -8,7 +8,7 @@ const options = {
 }
 
 export default makeSource({
-  contentDirPath: "contents",
+  contentDirPath: "./content",
   documentTypes: [Ui],
   mdx: {
     remarkPlugins: [],

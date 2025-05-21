@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { ArrowUpRight } from 'lucide-react'
 
 const imageUrl = "https://plus.unsplash.com/premium_photo-1746637466037-001842a48d31?q=80&w=967&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
@@ -11,6 +12,14 @@ export default function Home() {
 			{/* <button className="border-1 shadow-xl backdrop-blur-md px-10 py-2 rounded-xl text-shadow-lg/40 text-shadow-white bg-orange-600 outline-2 outline-white/80 z-[1]">
 				Get Started
 			</button> */}
+			<Link href="/docs" className="group flex hover:underline hover:underline-offset-4">
+				<span className="inline-flex items-baseline">
+					Documentation
+				</span>
+
+				<ArrowUpRight className="h-4 self-center opacity-0 group-hover:opacity-100" /> 
+			</Link>
+
 			<div className="relative w-50 h-60 outline-4 rounded-lg">
 				<Image
 					src={hikingUrl}

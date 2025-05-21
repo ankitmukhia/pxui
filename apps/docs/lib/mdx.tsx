@@ -2,10 +2,12 @@ import { MDXComponents } from 'mdx/types'
 import { cn } from '@/lib/utils'
 import { Card } from '@/components/ui/card'
 import { Note } from '@/components/ui/note'
+import { CompPreview } from '@/components/comp-preview'
 
 export const mdxComponents: MDXComponents = {
 	Card,
 	Note,
+	CompPreview,
 	h1: (props: React.ComponentProps<"h1">) => (
 		<h2
 			className="text-4xl font-bold"

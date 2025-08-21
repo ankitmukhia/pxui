@@ -13,7 +13,7 @@ export function CompPreview({ name }: { name: string }) {
     }
 
     return <Component />;
-  }, [Components, name]);
+  }, [name]);
 
   return (
     <Card className="min-h-[20rem] outline-2 outline-offset-3 outline-zinc-700/20">

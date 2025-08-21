@@ -45,8 +45,10 @@ export default function ExpPage() {
         <p className="group-hover:text-green-300 text-shadow-lg text-shadow-white/5">
           <span className="inline-flex items-baseline">
             Something is being cooked. Something is being cooked.
-            <img
+            <Image
               src={imageUrl}
+              alt="something"
+              sizes="fill"
               className="size-5 self-center mx-1 rounded-full object-cover"
             />
             <span>Ankit</span>

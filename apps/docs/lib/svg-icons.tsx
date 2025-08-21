@@ -1,8 +1,8 @@
 import * as React from "react";
 
-interface IconProps extends React.SVGProps<SVGSVGElement> {}
-
-export const FolderOpenIcon: React.FC<IconProps> = (props) => (
+export const FolderOpenIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
+  props,
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -18,7 +18,9 @@ export const FolderOpenIcon: React.FC<IconProps> = (props) => (
   </svg>
 );
 
-export const FolderClosedIcon: React.FC<IconProps> = (props) => (
+export const FolderClosedIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
+  props,
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"

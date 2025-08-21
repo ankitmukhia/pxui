@@ -1,66 +1,63 @@
-import React from 'react'
-import {
-	Tabs,
-	TabsContent,
-	TabsList,
-	TabsTrigger,
-} from "@/components/ui/tabs"
-import { Card } from '@/components/ui/card'
-import { Components } from '@/content/examples/index'
-import { Separator } from '@/components/ui/separator'
-import { CopyIcon } from 'lucide-react'
+import React from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Components } from "@/content/examples/index";
+import { CopyIcon } from "lucide-react";
 
-export function CompPreview({ name }: {
-	name: string;
-}) {
-	const Preview = React.useMemo(() => {
-		const Component = Components[name]?.component
+export function CompPreview({ name }: { name: string }) {
+  const Preview = React.useMemo(() => {
+    const Component = Components[name]?.component;
 
-		if (!Component) {
-			return <div>
-				Not found!
-			</div>
-		}
+    if (!Component) {
+      return <div>Not found!</div>;
+    }
 
-		return <Component />
-	}, [Components, name])
+    return <Component />;
+  }, [Components, name]);
 
-	return (
-		<Card>
-			<Tabs defaultValue="preview" className="w-full">
-				<div className="flex flex-col justify-center items-center space-y-6">
-					<div className="flex w-full justify-end">
-						<TabsList className="flex space-x-2 rounded-none bg-transparent">
-							<TabsTrigger value="preview"
-								className="relative rounded dark:bg-background/90 text-[10px] font-medium dark:data-[state=active]:bg-none px-4 border-0 shadow-none"
-							>
-								Preview
-							</TabsTrigger>
-							<TabsTrigger
-								value="code"
-								className="relative rounded dark:bg-background/90 text-[10px] font-medium dark:data-[state=active]:bg-none px-4 border-0 shadow-none"
-							>
-								Code
-							</TabsTrigger>
+  return (
+    <Card className="min-h-[20rem] outline-2 outline-offset-3 outline-zinc-700/20">
+      <Tabs defaultValue="preview" className="w-full">
+        {/* Header with TabsList */}
+        <CardHeader className="flex justify-between items-center">
+          <TabsList className="flex space-x-1 bg-transparent p-0">
+            <TabsTrigger
+              value="preview"
+              className="text-sm font-medium px-4 border-0 shadow-none"
+            >
+              Preview
+            </TabsTrigger>
+            <TabsTrigger
+              value="code"
+              className="text-sm font-medium px-4 border-0 shadow-none"
+            >
+              Code
+            </TabsTrigger>
+          </TabsList>
 
-							<Separator orientation="vertical" className="" />
+          {/* Copy button on the right */}
+          <CopyIcon size={15} className="cursor-pointer" />
+        </CardHeader>
 
-							<CopyIcon size={15} />
-						</TabsList>
-					</div>
-					<TabsContent value="preview" className="">
-						<React.Suspense fallback={<p>
-							Loading...
-						</p>
-						}>
-							{Preview}
-						</React.Suspense>
-					</TabsContent>
-					<TabsContent value="code">
-						Code
-					</TabsContent>
-				</div>
-			</Tabs>
-		</Card>
-	)
+        {/* Main content area */}
+        <CardContent className="flex justify-center items-center min-h-[15rem]">
+          <TabsContent
+            value="preview"
+            className="w-full flex justify-center items-center"
+          >
+            <React.Suspense fallback={<p>Loading...</p>}>
+              {Preview}
+            </React.Suspense>
+          </TabsContent>
+
+          <TabsContent
+            value="code"
+            className="w-full flex justify-center items-center"
+          >
+            Code
+          </TabsContent>
+        </CardContent>
+      </Tabs>
+    </Card>
+  );
 }

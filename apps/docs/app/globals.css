@@ -1,9 +1,10 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --figure-bg: ;
 
   --sidebar: oklch(0.985 0 0);
 
@@ -71,6 +72,7 @@
 }
 
 .dark {
+  --figure-bg: oklch(0.21 0.006 285.885);
 
   --sidebar: oklch(0.21 0.006 285.885);
 
@@ -88,7 +90,7 @@
 
   --sidebar-ring: oklch(0.552 0.016 285.938);
 
-  --background: oklch(15.91% 0.000 0);
+  --background: oklch(15.91% 0 0);
 
   --foreground: oklch(0.985 0 0);
 
@@ -118,11 +120,11 @@
 
   --destructive: oklch(0.704 0.191 22.216);
 
-	--border: oklch(0.52 0 0 / 10%);
+  --border: oklch(0.52 0 0 / 10%);
 
-	--active-bg: oklch(0.7 0.123 182.5 / 10%);
+  --active-bg: oklch(0.7 0.123 182.5 / 10%);
 
-	--active-text: oklch(0.78 0.1325 181.91); 
+  --active-text: oklch(0.78 0.1325 181.91);
 
   --input: oklch(1 0 0 / 15%);
 
@@ -140,9 +142,9 @@
 }
 
 @theme inline {
-	--font-*: initial;
+  --font-*: initial;
 
-	--font-sans: var(--font-inter);
+  --font-sans: var(--font-inter);
 
   --color-sidebar: var(--sidebar);
 
@@ -176,9 +178,9 @@
 
   --color-border: var(--border);
 
-	--color-active-bg: var(--active-bg);
+  --color-active-bg: var(--active-bg);
 
-	--color-active-text: var(--active-text);
+  --color-active-text: var(--active-text);
 
   --color-destructive: var(--destructive);
 
@@ -229,23 +231,29 @@
 }
 
 figure {
-	background-color: rgb(61, 61, 61, 0.13);
-	border: 1px solid rgba(104, 104, 104, 0.1);
-	border-radius: 0.4rem; 
+  background-color: var(--figure-bg);
+  outline: 2px solid oklch(37.1% 0 0 / 0.2);
+  outline-offset: 3px;
+  border-radius: 0.4rem;
+  border: 1px solid var(--border);
 }
 
 figcaption {
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-	padding: 0.5rem 1rem;
-	font-size: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
 }
 
 pre {
   overflow-x: auto;
   padding: 1rem 0;
-	font-size: 1rem;
+  font-size: 1rem;
 }
- 
+
 pre [data-line] {
   padding: 0 1rem;
+}
+
+pre.shiki {
+  background-color: transparent !important;
 }

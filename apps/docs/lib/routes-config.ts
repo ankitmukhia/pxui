@@ -11,6 +11,10 @@ export interface RoutesConfig {
 export const ROUTES: RoutesConfig = {
   sidebarNav: [
     {
+      title: "Get Started",
+      href: "",
+    },
+    {
       title: "Introduction",
       href: "/docs/introduction",
     },
@@ -19,15 +23,12 @@ export const ROUTES: RoutesConfig = {
       href: "/docs/installation",
     },
     {
-      title: "Components",
-      items: [
-        { title: "Menu (Dropdown)", href: "/docs/menu" },
-        { title: "Listbox (Select)", href: "/docs/listbox" },
-      ],
-    },
-    {
       title: "Buttons",
       items: [
+        {
+          title: "Hover me",
+          href: "/docs/hover-me",
+        },
         {
           title: "Error",
           href: "/docs/error",
@@ -36,6 +37,13 @@ export const ROUTES: RoutesConfig = {
           title: "Success",
           href: "/docs/success",
         },
+      ],
+    },
+    {
+      title: "Components",
+      items: [
+        { title: "Menu (Dropdown)", href: "/docs/menu" },
+        { title: "Listbox (Select)", href: "/docs/listbox" },
       ],
     },
   ],

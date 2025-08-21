@@ -1,7 +1,7 @@
 export default function Button() {
-	return (
-			<button
-				className={`
+  return (
+    <button
+      className={`
         relative
         px-8 py-3 
         rounded-lg
@@ -25,8 +25,8 @@ export default function Button() {
         before:blur-[3px]
         before:content-['']
       `}
-			>
-				hover me
-			</button>
-	)
+    >
+      hover me
+    </button>
+  );
 }

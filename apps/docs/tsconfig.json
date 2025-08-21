@@ -1,19 +1,25 @@
 {
   "extends": "@repo/typescript-config/nextjs.json",
   "compilerOptions": {
-		"baseUrl": ".",
+    "baseUrl": ".",
     "plugins": [
       {
         "name": "next"
       }
     ],
-		"paths": {
-			"@/*": ["./*"],
-			"contentlayer/generated": ["./.contentlayer/generated"]
-		} 
+    "paths": {
+      "@/*": ["./*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
+    }
   },
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "video.d.ts", "next-env.d.ts", ".contentlayer/generated"],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "video.d.ts",
+    "next-env.d.ts",
+    ".contentlayer/generated"
+  ],
+  "exclude": ["node_modules"]
 }

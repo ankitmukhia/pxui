@@ -1,5 +1,5 @@
 import { defineDocumentType } from "contentlayer2/source-files";
-import GithubSlugger from 'github-slugger';
+import GithubSlugger from "github-slugger";
 
 export const Ui = defineDocumentType(() => ({
   name: "Ui",

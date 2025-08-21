@@ -1,9 +1,9 @@
-export const Note = ({ children }: {
-	children: React.ReactNode
-}) => {
-	return (
-		<div className="bg-active-bg text-md p-4 rounded-md border-l-8 border-active-bg text-active-text">
-			{children}
-		</div>
-	)
-} 
+import { Card, CardContent } from "./card";
+
+export const Note = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Card className="rounded-tl-xs outline-2 outline-offset-3 outline-zinc-700/20">
+      <CardContent>{children}</CardContent>
+    </Card>
+  );
+};

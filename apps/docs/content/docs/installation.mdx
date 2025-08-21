@@ -1,9 +1,8 @@
 ---
 title: Installation
 status: published
-description: Install with ease 
+description: Install with ease
 ---
-
 
 ## Installation
 
@@ -13,4 +12,28 @@ pnpm create-next-app@latest
 
 ```bash
 npx shadcn@latest init
+```
+
+```js
+import { useState } from "react";
+
+export const Card = () => {
+  return (
+    <div className="bg-gree-400/40 border border-zinc-400/20">
+      This is custom card.
+    </div>
+  );
+};
+```
+
+```js
+<svg width="200" height="100">
+  <path d="M 0 50 H 200" stroke="#282828" stroke-width="2" />
+  <circle cx="50%" cy="50%" r="20" fill="white" mask="url(#circle-path-mask)" />
+  <defs>
+    <mask id="circle-path-mask">
+      <path d="M 0 50 H 200" stroke="white" stroke-width="2" />
+    </mask>
+  </defs>
+</svg>
 ```

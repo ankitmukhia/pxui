@@ -107,12 +107,14 @@ export const CoreFeatures = () => {
           />
 
           {/* Grid intersection dots for XL */}
-          {[
-            [1 / 3, 1 / 3],
-            [2 / 3, 1 / 3],
-            [1 / 3, 2 / 3],
-            [2 / 3, 2 / 3],
-          ].map(([left, top], index) => (
+          {(
+            [
+              [1 / 3, 1 / 3],
+              [2 / 3, 1 / 3],
+              [1 / 3, 2 / 3],
+              [2 / 3, 2 / 3],
+            ] as [number, number][]
+          ).map(([left, top], index) => (
             <div
               key={index}
               className="absolute ring-[4px] ring-[#191919] hidden -translate-x-1/2 -translate-y-1/2 xl:block w-[4px] h-[4px] bg-gray-600"

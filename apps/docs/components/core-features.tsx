@@ -5,7 +5,7 @@ import { RocketIcon } from "lucide-react";
 
 export const CoreFeatures = () => {
   return (
-    <div className="relative z-10 rounded-2xl pb-2 pt-6 md:py-10 xl:rounded-[28px] xl:py-12 bg-[linear-gradient(180deg,#1C1C1C_0%,#141414_100%)] dark:bg-white dark:bg-none">
+    <div className="relative z-10 rounded-2xl pb-2 pt-6 md:py-10 xl:rounded-[28px] xl:py-12 bg-[linear-gradient(180deg,#1C1C1C_0%,#141414_100%)] dark:bg-[linear-gradient(180deg,#f9f9f9_0%,#eaeaea_100%)]">
       <div className="relative flex items-center md:justify-center gap-4 px-4">
         <div
           className="flex h-6 items-center gap-1.5 rounded-[9px] bg-white/[.02] dark:bg-black pl-1.5 pr-2.5 text-[0.65rem] text-gray-200 xl:h-6 xl:pl-2 xl:pr-3"

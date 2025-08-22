@@ -21,7 +21,7 @@ export default function Home() {
 
           <Link
             href="/docs"
-            className="flex items-center justtify-center mt-4 text-[0.85rem] text-white bg-[#fa7319] h-11 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 dark:border-white/10 outline-0"
+            className="flex items-center justtify-center mt-4 text-[0.85rem] text-white bg-[#171717] dark:bg-[#fa7319] h-11 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 dark:border-white/10 outline-0"
           >
             Get Started - for free
             <ChevronRight size={18} />

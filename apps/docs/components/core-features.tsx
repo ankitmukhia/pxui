@@ -5,28 +5,23 @@ import { RocketIcon } from "lucide-react";
 
 export const CoreFeatures = () => {
   return (
-    <div
-      className="relative z-10 rounded-2xl pb-2 pt-6 md:py-10 xl:rounded-[28px] xl:py-12"
-      style={{
-        background: "linear-gradient(180deg, #1C1C1C 0%, #141414 100%)",
-      }}
-    >
+    <div className="relative z-10 rounded-2xl pb-2 pt-6 md:py-10 xl:rounded-[28px] xl:py-12 bg-[linear-gradient(180deg,#1C1C1C_0%,#141414_100%)] dark:bg-white dark:bg-none">
       <div className="relative flex items-center md:justify-center gap-4 px-4">
         <div
-          className="flex h-6 items-center gap-1.5 rounded-[9px] bg-white/[.02] pl-1.5 pr-2.5 text-[0.65rem] text-gray-300 xl:h-6 xl:pl-2 xl:pr-3"
+          className="flex h-6 items-center gap-1.5 rounded-[9px] bg-white/[.02] dark:bg-black pl-1.5 pr-2.5 text-[0.65rem] text-gray-200 xl:h-6 xl:pl-2 xl:pr-3"
           style={{
             boxShadow:
               "0 0 0 1px rgba(0, 0, 0, .08), inset 0 1px 2px rgba(255, 255, 255, .12)",
           }}
         >
-          <RocketIcon className="size-[10px] text-[#707070]" />
+          <RocketIcon className="size-[10px]" />
           Core Features
         </div>
       </div>
 
       <div className="flex flex-col md:max-w-4xl mx-auto px-4">
         <div className="flex flex-col mt-4 gap-4 md:items-center md:gap-4 md:text-center">
-          <h2 className="text-2xl font-semibold -tracking-[0.02em] text-white">
+          <h2 className="text-2xl font-semibold -tracking-[0.02em] text-primary-foreground">
             What&apos;s inside Pxui?
           </h2>
           <p className="max-w-[25rem] text-[0.75rem] text-gray-500 md:text-gray-400 tracking-wide">
@@ -46,7 +41,9 @@ export const CoreFeatures = () => {
               >
                 <IconComponent className="size-[0.95rem] shrink-0 text-[#F05023]" />
                 <div className="md:mt-5 flx-1">
-                  <div className="text-xs text-white">{feature.title}</div>
+                  <div className="text-xs font-semibold text-primary-foreground">
+                    {feature.title}
+                  </div>
                   <div className="mt-1 w-full text-pretty text-xs text-gray-400 md:max-w-[10rem] md:text-[0.60rem]">
                     {feature.description}
                   </div>
@@ -117,7 +114,7 @@ export const CoreFeatures = () => {
           ).map(([left, top], index) => (
             <div
               key={index}
-              className="absolute ring-[4px] ring-[#191919] hidden -translate-x-1/2 -translate-y-1/2 xl:block w-[4px] h-[4px] bg-gray-600"
+              className="absolute ring-[4px] ring-[#191919] dark:ring-gray-600 hidden -translate-x-1/2 -translate-y-1/2 xl:block w-[4px] h-[4px] bg-gray-600 dark:bg-gray-300"
               style={{
                 left: `${left * 100}%`,
                 top: `${top * 100}%`,

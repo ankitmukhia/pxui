@@ -2,8 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
-const imageUrl =
-  "https://plus.unsplash.com/premium_photo-1746637466037-001842a48d31?q=80&w=967&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+// const imageUrl = "https://plus.unsplash.com/premium_photo-1746637466037-001842a48d31?q=80&w=967&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 const hikingUrl =
   "https://images.unsplash.com/photo-1568454537842-d933259bb258?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -11,6 +10,45 @@ const hikingUrl =
 export default function ExpPage() {
   return (
     <div className="flex flex-col min-h-screen gap-4 pt-4 max-w-xl px-2 mx-auto">
+      <FirstSetOfComponents />
+      <SecondSetOfComponents />
+    </div>
+  );
+}
+
+function SecondSetOfComponents() {
+  return (
+    <div className="flex flex-col w-full space-y-2">
+      <button className="text-xs text-white bg-[#171717] h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
+        <span>Reset Password</span>
+      </button>
+      <button className="text-xs text-white bg-[#fa7319] h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
+        <span>Reset Password</span>
+      </button>
+      <button className="text-xs text-white bg-[#3356ff] h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
+        <span>Reset Password</span>
+      </button>
+      <button className="text-xs text-white bg-[#7d52fa] h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
+        <span>Reset Password</span>
+      </button>
+      <button className="text-xs text-white bg-[#12a557] h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
+        <span>Reset Password</span>
+      </button>
+      <button className="text-xs text-white bg-[#7b7b7b] h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
+        <span>Reset Password</span>
+      </button>
+    </div>
+  );
+}
+
+/* <div className="relative w-96 h-64 overflow-hidden">
+	<img src={imageUrl} className="w-full h-full object-cover" />
+	<div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70"></div>
+</div> */
+
+function FirstSetOfComponents() {
+  return (
+    <>
       {/* <button className="border-1 shadow-xl backdrop-blur-md px-10 py-2 rounded-xl text-shadow-lg/40 text-shadow-white bg-orange-600 outline-2 outline-white/80 z-[1]">
 				Get Started
 			</button> */}
@@ -45,12 +83,12 @@ export default function ExpPage() {
         <p className="group-hover:text-green-300 text-shadow-lg text-shadow-white/5">
           <span className="inline-flex items-baseline">
             Something is being cooked. Something is being cooked.
-            <Image
+            {/* <Image
               src={imageUrl}
               alt="something"
               sizes="fill"
               className="size-5 self-center mx-1 rounded-full object-cover"
-            />
+            /> */}
             <span>Ankit</span>
           </span>
           Something is being cooked. Something is being cooked.
@@ -98,11 +136,6 @@ export default function ExpPage() {
           Get Started (Free)
         </button>
       </div>
-    </div>
+    </>
   );
 }
-
-/* <div className="relative w-96 h-64 overflow-hidden">
-	<img src={imageUrl} className="w-full h-full object-cover" />
-	<div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70"></div>
-</div> */

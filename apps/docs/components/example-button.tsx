@@ -3,7 +3,8 @@ export default function Button() {
     <button
       className={`
         relative
-        px-8 py-3 
+				h-12
+        px-8 
         rounded-lg
         text-white
 				cursor-pointer

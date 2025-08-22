@@ -19,9 +19,12 @@ export default function Home() {
             experiments, i build and learn along the way.
           </p>
 
-          <Link href="/docs" className="flex items-center justtify-center mt-4">
-            Get Started - <span className="">for free</span>
-            <ChevronRight />
+          <Link
+            href="/docs"
+            className="flex items-center justtify-center mt-4 text-[0.85rem] text-white bg-[#fa7319] h-11 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 dark:border-white/10 outline-0"
+          >
+            Get Started - for free
+            <ChevronRight size={18} />
           </Link>
         </div>
 

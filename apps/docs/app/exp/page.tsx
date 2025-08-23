@@ -7,8 +7,7 @@ import { ModeToggle } from "@/components/ui/mode-toggle";
 
 // const imageUrl = "https://plus.unsplash.com/premium_photo-1746637466037-001842a48d31?q=80&w=967&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
-const hikingUrl =
-  "https://images.unsplash.com/photo-1568454537842-d933259bb258?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+// const hikingUrl = ("https://images.unsplash.com/photo-1568454537842-d933259bb258?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 
 const profileImage =
   "https://plus.unsplash.com/premium_photo-1738449258712-f1e6ad3d40e1?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -126,12 +125,12 @@ function SecondSetOfComponents() {
 	<div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70"></div>
 </div> */
 
-export function FirstSetOfComponents() {
+/* function FirstSetOfComponents() {
   return (
     <>
-      {/* <button className="border-1 shadow-xl backdrop-blur-md px-10 py-2 rounded-xl text-shadow-lg/40 text-shadow-white bg-orange-600 outline-2 outline-white/80 z-[1]">
+      <button className="border-1 shadow-xl backdrop-blur-md px-10 py-2 rounded-xl text-shadow-lg/40 text-shadow-white bg-orange-600 outline-2 outline-white/80 z-[1]">
 				Get Started
-			</button> */}
+			</button>
       <Link
         href="/docs"
         className="group flex hover:underline hover:underline-offset-4"
@@ -161,12 +160,12 @@ export function FirstSetOfComponents() {
         <p className="group-hover:text-green-300 text-shadow-lg text-shadow-white/5">
           <span className="inline-flex items-baseline">
             Something is being cooked. Something is being cooked.
-            {/* <Image
+            <Image
               src={imageUrl}
               alt="something"
               sizes="fill"
               className="size-5 self-center mx-1 rounded-full object-cover"
-            /> */}
+            /> 
             <span>Ankit</span>
           </span>
           Something is being cooked. Something is being cooked.
@@ -216,4 +215,4 @@ export function FirstSetOfComponents() {
       </div>
     </>
   );
-}
+} */

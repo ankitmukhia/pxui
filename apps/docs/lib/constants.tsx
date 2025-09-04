@@ -12,6 +12,47 @@ interface FileStructureType {
   file_items?: string[];
 }
 
+interface ProvidesType {
+  title: string;
+}
+
+interface PricingCardTypes {
+  plan: string;
+  price: string;
+  provides: ProvidesType[];
+}
+
+export const pricingCard: PricingCardTypes[] = [
+  {
+    plan: "Starter",
+    price: "Free",
+    provides: [
+      { title: "Pro two-week trial" },
+      { title: "200 completions per month" },
+      { title: "50 requests per month" },
+    ],
+  },
+  {
+    plan: "Pro",
+    price: "19/mo",
+    provides: [
+      { title: "Unlimited completions" },
+      { title: "500 requests per month" },
+      { title: "Priority email support" },
+    ],
+  },
+  {
+    plan: "Enterprise",
+    price: "49/mo",
+    provides: [
+      { title: "Unlimited completions" },
+      { title: "Unlimited requests" },
+      { title: "Dedicated account manager" },
+      { title: "24/7 premium support" },
+    ],
+  },
+];
+
 export const fileStructure: FileStructureType[] = [
   {
     title: "actions",

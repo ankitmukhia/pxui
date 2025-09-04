@@ -1,8 +1,12 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, ZapIcon } from "lucide-react";
+import {
+  ZapIcon,
+  RotateCw as RotateIcon,
+  BadgeCheckIcon,
+  DollarSignIcon,
+} from "lucide-react";
 import { SunIcon, MoonIcon } from "@/lib/svg-icons";
-
+import { pricingCard } from "@/lib/constants";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 
 // const imageUrl = "https://plus.unsplash.com/premium_photo-1746637466037-001842a48d31?q=80&w=967&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -25,11 +29,85 @@ function getCurrentTime() {
 
 export default function ExpPage() {
   return (
-    <div className="flex flex-col min-h-screen gap-4 pt-4 max-w-xl px-2 mx-auto">
-      <ModeToggle />
-      <SecondSetOfComponents />
-      <ThirdSetOfComponents />
-      <FourthSetOfComponents />
+    <>
+      <div className="flex flex-col gap-4 pt-4 max-w-xl px-2 mx-auto">
+        <ModeToggle />
+        <FourthSetOfComponents />
+        <SecondSetOfComponents />
+        <ThirdSetOfComponents />
+        <StatusTags />
+      </div>
+      <div className="max-w-4xl mx-auto my-10">
+        <PricingCard />
+      </div>
+    </>
+  );
+}
+
+function PricingCard() {
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2">
+      {pricingCard.map((pricingDetails, _idx) => (
+        <div
+          key={pricingDetails.plan}
+          className="flex flex-col justify-between space-y-4 border-2 px-[.90rem] py-4 rounded-2xl"
+        >
+          <div className="space-y-5">
+            <h4 className="text-xl">{pricingDetails.plan}</h4>
+
+            <div className="flex items-center gap-2">
+              {_idx !== 0 && (
+                <DollarSignIcon size={32} className="self-center" />
+              )}
+              <h1 className="text-4xl">{pricingDetails.price}</h1>
+            </div>
+
+            <div className="border-t-2" />
+
+            <div className="space-y-2">
+              {pricingDetails.provides.map((providesDetails) => (
+                <div
+                  key={providesDetails.title}
+                  className="flex items-center gap-2"
+                >
+                  <BadgeCheckIcon size={16} />
+                  <p className="text-lg">{providesDetails.title}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button className="w-fit bg-green-400/30 p-2 rounded-xl">
+            Get Started
+          </button>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function StatusTags() {
+  return (
+    <div className="flex items-center gap-2">
+      <div className="flex items-center justify-center gap-1 h-8 px-[.55rem] bg-green-200 rounded-full text-green-400 text-[.80rem] w-fit inset-shadow-sm inset-shadow-white border border-green-300/10 shadow-lg shadow-green-400/40">
+        <RotateIcon size={12} />
+        <span>Success</span>
+      </div>
+
+      <div className="flex items-center justify-center gap-1 h-8 px-[.55rem] bg-orange-200 rounded-full text-orange-400 text-[.80rem] w-fit inset-shadow-sm inset-shadow-white border border-orange-300/10 shadow-lg shadow-orange-400/40">
+        <RotateIcon size={12} />
+        <span>Pending</span>
+      </div>
+
+      <div className="flex items-center justify-center gap-1 h-8 px-[.55rem] bg-purple-200 rounded-full text-purple-400 text-[.80rem] w-fit inset-shadow-sm inset-shadow-white border border-purple-300/10 shadow-lg shadow-purple-400/40">
+        <RotateIcon size={12} />
+        <span>Paused</span>
+      </div>
+
+      <div className="flex items-center justify-center gap-1 h-8 px-[.55rem] bg-red-200 rounded-full text-red-400 text-[.80rem] w-fit inset-shadow-sm inset-shadow-white border border-red-300/10 shadow-lg shadow-red-400/40">
+        <RotateIcon size={12} />
+        <span>Error</span>
+      </div>
     </div>
   );
 }
@@ -46,7 +124,7 @@ function FourthSetOfComponents() {
           <div className="flex gap-4 items-center">
             <div className="relative h-12 w-12">
               <Image
-                src={profileImage}
+                src={profileImage || ""}
                 fill
                 alt="profile_img"
                 className="object-cover rounded-full"
@@ -84,11 +162,11 @@ function FourthSetOfComponents() {
 function ThirdSetOfComponents() {
   return (
     <div className="flex justify-center gap-2">
-      <div className="flex items-center justify-center h-8 w-8 border border-black/10 rounded-lg bg-zinc-400/10 inset-shadow-sm">
+      <div className="flex items-center justify-center h-8 w-8 border border-black/10 dark:border-zinc-400/8 rounded-lg bg-zinc-400/10 inset-shadow-sm">
         <SunIcon className="size-4 text-gray-500" />
       </div>
 
-      <div className="flex items-center justify-center h-8 w-8 border border-black/10 rounded-lg bg-zinc-400/10 inset-shadow-sm">
+      <div className="flex items-center justify-center h-8 w-8 border border-black/10 dark:border-zinc-400/8 rounded-lg bg-zinc-400/10 inset-shadow-sm">
         <MoonIcon className="size-4 text-gray-500" />
       </div>
     </div>
@@ -126,93 +204,93 @@ function SecondSetOfComponents() {
 </div> */
 
 /* function FirstSetOfComponents() {
-  return (
-    <>
-      <button className="border-1 shadow-xl backdrop-blur-md px-10 py-2 rounded-xl text-shadow-lg/40 text-shadow-white bg-orange-600 outline-2 outline-white/80 z-[1]">
+	return (
+		<>
+			<button className="border-1 shadow-xl backdrop-blur-md px-10 py-2 rounded-xl text-shadow-lg/40 text-shadow-white bg-orange-600 outline-2 outline-white/80 z-[1]">
 				Get Started
 			</button>
-      <Link
-        href="/docs"
-        className="group flex hover:underline hover:underline-offset-4"
-      >
-        <span className="inline-flex items-baseline">Documentation</span>
+			<Link
+				href="/docs"
+				className="group flex hover:underline hover:underline-offset-4"
+			>
+				<span className="inline-flex items-baseline">Documentation</span>
 
-        <ArrowUpRight className="h-4 self-center opacity-0 group-hover:opacity-100" />
-      </Link>
+				<ArrowUpRight className="h-4 self-center opacity-0 group-hover:opacity-100" />
+			</Link>
 
-      <div className="relative w-50 h-65 rounded-md">
-        <Image
-          src={hikingUrl}
-          fill
-          alt="hiking-img"
-          className="object-cover rounded-md mask-b-from-40%"
-        />
+			<div className="relative w-50 h-65 rounded-md">
+				<Image
+					src={hikingUrl}
+					fill
+					alt="hiking-img"
+					className="object-cover rounded-md mask-b-from-40%"
+				/>
 
-        <div className="absolute flex flex-col gap-2 bottom-0 p-2 left-0 w-full text-gray-800">
-          <h2 className="text-[0.90rem]">Hiking View</h2>
-          <p className="text-xs line-clamp-2">
-            Glimps of todays hiking. Loved it show me good thing.
-          </p>
-        </div>
-      </div>
+				<div className="absolute flex flex-col gap-2 bottom-0 p-2 left-0 w-full text-gray-800">
+					<h2 className="text-[0.90rem]">Hiking View</h2>
+					<p className="text-xs line-clamp-2">
+						Glimps of todays hiking. Loved it show me good thing.
+					</p>
+				</div>
+			</div>
 
-      <div className="group relative p-4 border cursor-pointer border-gray-500/10 rounded-md overflow-hidden">
-        <p className="group-hover:text-green-300 text-shadow-lg text-shadow-white/5">
-          <span className="inline-flex items-baseline">
-            Something is being cooked. Something is being cooked.
-            <Image
-              src={imageUrl}
-              alt="something"
-              sizes="fill"
-              className="size-5 self-center mx-1 rounded-full object-cover"
-            /> 
-            <span>Ankit</span>
-          </span>
-          Something is being cooked. Something is being cooked.
-        </p>
+			<div className="group relative p-4 border cursor-pointer border-gray-500/10 rounded-md overflow-hidden">
+				<p className="group-hover:text-green-300 text-shadow-lg text-shadow-white/5">
+					<span className="inline-flex items-baseline">
+						Something is being cooked. Something is being cooked.
+						<Image
+							src={imageUrl}
+							alt="something"
+							sizes="fill"
+							className="size-5 self-center mx-1 rounded-full object-cover"
+						/> 
+						<span>Ankit</span>
+					</span>
+					Something is being cooked. Something is being cooked.
+				</p>
 
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-green-200/10" />
-      </div>
+				<div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-green-200/10" />
+			</div>
 
-      <div className="flex items-center gap-2">
-        <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#00997E] px-8 py-3 font-medium text-[#FDFFF4] transition duration-300 hover:rotate-1 hover:scale-110 hover:shadow-lg hover:shadow-[#00997E]/50">
-          <span className="relative z-10 transition-transform group-hover:scale-110">
-            Hover me
-          </span>
-          <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
-            <div className="relative h-full w-8 bg-white/20" />
-          </div>
-        </button>
+			<div className="flex items-center gap-2">
+				<button className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#00997E] px-8 py-3 font-medium text-[#FDFFF4] transition duration-300 hover:rotate-1 hover:scale-110 hover:shadow-lg hover:shadow-[#00997E]/50">
+					<span className="relative z-10 transition-transform group-hover:scale-110">
+						Hover me
+					</span>
+					<div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
+						<div className="relative h-full w-8 bg-white/20" />
+					</div>
+				</button>
 
-        <button
-          className={`
-        relative
-        px-8 py-3 
-        rounded-lg
-        text-white
+				<button
+					className={`
+				relative
+				px-8 py-3 
+				rounded-lg
+				text-white
 				cursor-pointer
-        font-medium 
-        bg-gradient-to-b from-[#FF9366] to-[#F97316] 
-        hover:shadow-orange-400
-        transition-all 
+				font-medium 
+				bg-gradient-to-b from-[#FF9366] to-[#F97316] 
+				hover:shadow-orange-400
+				transition-all 
 				duration-200 
-        transform 
+				transform 
 				hover:scale-105
-        border-2 
+				border-2 
 				border-white/40
-        before:absolute
-        before:inset-[-3px]
-        before:-z-10
-        before:rounded-lg
-        before:bg-orange-400/80
-        before:opacity-70
-        before:blur-[3px]
-        before:content-['']
-      `}
-        >
-          Get Started (Free)
-        </button>
-      </div>
-    </>
-  );
+				before:absolute
+				before:inset-[-3px]
+				before:-z-10
+				before:rounded-lg
+				before:bg-orange-400/80
+				before:opacity-70
+				before:blur-[3px]
+				before:content-['']
+			`}
+				>
+					Get Started (Free)
+				</button>
+			</div>
+		</>
+	);
 } */

@@ -5,15 +5,9 @@ import { RocketIcon } from "lucide-react";
 
 export const CoreFeatures = () => {
   return (
-    <div className="relative z-10 rounded-2xl pb-2 pt-6 md:py-10 xl:rounded-[28px] xl:py-12 bg-[linear-gradient(180deg,#1C1C1C_0%,#141414_100%)] dark:bg-[linear-gradient(180deg,#f9f9f9_0%,#eaeaea_100%)]">
+    <div className="relative z-10 rounded-2xl pb-2 pt-6 md:py-10 xl:rounded-[28px] xl:py-12 bg-neutral-900">
       <div className="relative flex items-center md:justify-center gap-4 px-4">
-        <div
-          className="flex h-6 items-center gap-1.5 rounded-[9px] bg-white/[.02] dark:bg-black pl-1.5 pr-2.5 text-[0.65rem] text-gray-200 xl:h-6 xl:pl-2 xl:pr-3"
-          style={{
-            boxShadow:
-              "0 0 0 1px rgba(0, 0, 0, .08), inset 0 1px 2px rgba(255, 255, 255, .12)",
-          }}
-        >
+        <div className="flex h-6 items-center gap-1.5 rounded-[9px] bg-white/[.02] dark:bg-black pl-1.5 pr-2.5 text-[0.65rem] text-gray-200 xl:h-6 xl:pl-2 xl:pr-3">
           <RocketIcon className="size-[10px]" />
           Core Features
         </div>
@@ -54,54 +48,22 @@ export const CoreFeatures = () => {
 
           {/* Grid lines for different breakpoints */}
           {/* MD breakpoint lines */}
-          <div
-            className="absolute top-0 h-full w-px left-1/2 hidden md:block xl:hidden"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(38, 38, 38, 0) 0%, #262626 32%, #262626 68%, rgba(38, 38, 38, 0) 100%)",
-            }}
-          />
+          <div className="absolute top-0 h-full w-px left-1/2 hidden md:block xl:hidden bg-linear-to-t from-zinc-800/5 via-zinc-400/20 to-zinc-800/5" />
           {[20, 40, 60, 80].map((percent) => (
             <div
               key={percent}
-              className="absolute left-0 h-px w-full hidden md:block xl:hidden"
+              className="absolute left-0 h-px w-full hidden md:block xl:hidden bg-linear-to-t from-zinc-800/5 via-zinc-400/20 to-zinc-800/5"
               style={{
                 top: `${percent}%`,
-                background:
-                  "linear-gradient(90deg, rgba(38, 38, 38, 0) 0%, #262626 32%, #262626 68%, rgba(38, 38, 38, 0) 100%)",
               }}
             />
           ))}
 
           {/* XL breakpoint lines */}
-          <div
-            className="absolute top-0 h-full w-px left-1/3 hidden xl:block"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(38, 38, 38, 0) 0%, #262626 32%, #262626 68%, rgba(38, 38, 38, 0) 100%)",
-            }}
-          />
-          <div
-            className="absolute top-0 h-full w-px left-2/3 hidden xl:block"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(38, 38, 38, 0) 0%, #262626 32%, #262626 68%, rgba(38, 38, 38, 0) 100%)",
-            }}
-          />
-          <div
-            className="absolute left-0 h-px w-full top-1/3 hidden xl:block"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(38, 38, 38, 0) 0%, #262626 32%, #262626 68%, rgba(38, 38, 38, 0) 100%)",
-            }}
-          />
-          <div
-            className="absolute left-0 h-px w-full top-2/3 hidden xl:block"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(38, 38, 38, 0) 0%, #262626 32%, #262626 68%, rgba(38, 38, 38, 0) 100%)",
-            }}
-          />
+          <div className="absolute top-0 h-full w-px left-1/3 hidden xl:block bg-linear-to-t from-zinc-800/5 via-zinc-400/20 to-zinc-800/5" />
+          <div className="absolute top-0 h-full w-px left-2/3 hidden xl:block bg-linear-to-t from-zinc-800/5 via-zinc-400/20 to-zinc-800/5" />
+          <div className="absolute left-0 h-px w-full top-1/3 hidden xl:block bg-linear-to-r from-zinc-800/5 via-zinc-400/20 to-zinc-800/5" />
+          <div className="absolute left-0 h-px w-full top-2/3 hidden xl:block bg-linear-to-r from-zinc-800/5 via-zinc-400/20 to-zinc-800/5" />
 
           {/* Grid intersection dots for XL */}
           {(

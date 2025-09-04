@@ -6,7 +6,7 @@ import "./globals.css";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  weight: ["200", "300", "400"],
+  weight: ["200", "300", "400", "500", "700"],
 });
 
 const manrope = Manrope({

@@ -16,11 +16,11 @@ export const mdxComponents: MDXComponents = {
     <h3 className="text-xl font-bold" {...props} />
   ),
   p: ({ className, ...props }: React.ComponentProps<"p">) => (
-    <p className={cn("-mt-3 text-sidebar-foreground", className)} {...props} />
+    <p className={cn("-mt-3 text-foreground/70", className)} {...props} />
   ),
   ul: ({ children, ...props }) => (
     <ul
-      className={cn("list-disc list-inside space-y-2 text-sidebar-foreground")}
+      className={cn("list-disc list-inside space-y-2 text-foreground/70")}
       {...props}
     >
       {children}

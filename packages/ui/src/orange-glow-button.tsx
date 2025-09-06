@@ -1,7 +1,15 @@
-export default function Button() {
+import { cn } from "@/lib/utils";
+
+export default function OrangeGlowButton({
+  className,
+  ...props
+}: {
+  className?: string;
+}) {
   return (
     <button
-      className={`
+      className={cn(
+        `
         relative
 				h-12
         px-8 
@@ -25,7 +33,10 @@ export default function Button() {
         before:opacity-70
         before:blur-[3px]
         before:content-['']
-      `}
+      `,
+        className,
+      )}
+      {...props}
     >
       hover me
     </button>

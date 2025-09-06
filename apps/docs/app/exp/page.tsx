@@ -32,7 +32,7 @@ export default function ExpPage() {
     <>
       <div className="flex flex-col gap-4 pt-4 max-w-xl px-2 mx-auto">
         <ModeToggle />
-        <FourthSetOfComponents />
+        <ProfileCard />
         <SecondSetOfComponents />
         <ThirdSetOfComponents />
         <StatusTags />
@@ -112,7 +112,7 @@ function StatusTags() {
   );
 }
 
-function FourthSetOfComponents() {
+function ProfileCard() {
   return (
     <div className="relative bg-stone-950 rounded-[3rem] px-8 py-7 text-gray-200 shadow-sm shadow-white/10 inset-shadow-sm inset-shadow-white/5">
       <div className="relative">
@@ -176,22 +176,25 @@ function ThirdSetOfComponents() {
 function SecondSetOfComponents() {
   return (
     <div className="flex flex-col w-full space-y-2">
-      <button className="text-xs text-white bg-[#171717] h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
+      <button className="text-xs text-white bg-[#171717] hover:bg-[#171717]/90 h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
         <span>Reset Password</span>
       </button>
-      <button className="text-xs text-white bg-[#fa7319] h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
+      <button className="text-xs text-white bg-[#fa7319] hover:bg-[#fa7319]/90 h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
         <span>Reset Password</span>
       </button>
-      <button className="text-xs text-white bg-[#3356ff] h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
+      <button className="text-xs text-white bg-[#3356ff] hover:bg-[#3356ff]/90 h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
         <span>Reset Password</span>
       </button>
-      <button className="text-xs text-white bg-[#7d52fa] h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
+      <button className="text-xs text-white bg-[#7d52fa] hover:bg-[#7d52fa]/90 h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
         <span>Reset Password</span>
       </button>
-      <button className="text-xs text-white bg-[#12a557] h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
+      <button className="text-xs text-white bg-[#12a557] hover:bg-[#12a557]/90 h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
         <span>Reset Password</span>
       </button>
-      <button className="text-xs text-white bg-[#7b7b7b] h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
+      <button className="text-xs text-white bg-[#7b7b7b] hover:bg-[#7b7b7b]/90 h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
+        <span>Reset Password</span>
+      </button>
+      <button className="text-xs text-white bg-red-400 hover:bg-red-400/90 h-10 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 outline-0">
         <span>Reset Password</span>
       </button>
     </div>

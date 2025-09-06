@@ -1,5 +1,5 @@
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import { SiteHeader } from "@/components/site-header";
+//import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+// import { SiteHeader } from "@/components/site-header";
 import { AppSidebar } from "@/components/app-sidebar";
 
 export default function DocsLayout({
@@ -8,21 +8,16 @@ export default function DocsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="[--header-height:calc(theme(spacing.14))]">
-      <SidebarProvider className="flex flex-col">
-        <SiteHeader />
-        <div className="flex flex-1">
-          <AppSidebar />
+    <div className="min-h-[100vh] md:min-h-min">
+      <div className="flex max-w-4xl mx-auto mt-10 px-4 xl:px-0">
+        <AppSidebar />
 
-          <SidebarInset className="max-w-[54rem] mx-auto">
-            <div className="flex flex-1 flex-col gap-4 p-4">
-              <div className="min-h-[100vh] flex-1 rounded-xl md:min-h-min">
-                <div className="flex flex-col gap-4 p-4">{children}</div>
-              </div>
-            </div>
-          </SidebarInset>
+        <div className="flex flex-1 flex-col">
+          <div className="flex flex-col w-full max-w-2xl mx-auto space-y-6">
+            {children}
+          </div>
         </div>
-      </SidebarProvider>
+      </div>
     </div>
   );
 }

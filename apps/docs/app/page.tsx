@@ -48,18 +48,18 @@ export default function Home() {
 
                 <div className="text-sm tracking-wider">pxui.com</div>
 
-                <TabsList className="h-0 py-4 bg-opacity-10 bg-zinc-400/8 rounded-full">
+                <TabsList className="h-7 rounded-full">
                   <div className="flex items-center justify-center p-0">
                     <TabsTrigger
                       value="code"
-                      className="flex w-14 py-1 rounded-none rounded-tl-full rounded-bl-full text-xs data-[state=active]:bg-transparent dark:data-[state=active]:bg-zinc-500/20 data-[state=active]:border-none"
+                      className="flex w-14 py-1 rounded-none rounded-tl-full rounded-bl-full text-xs data-[state=active]:bg-transparent data-[state=active]:border-none"
                     >
                       Code
                     </TabsTrigger>
 
                     <TabsTrigger
                       value="preview"
-                      className="flex w-14 py-1 rounded-none rounded-tr-full rounded-br-full text-xs data-[state=active]:bg-transparent dark:data-[state=active]:bg-zinc-500/20 data-[state=active]:border-none"
+                      className="flex w-14 py-1 rounded-none rounded-tr-full rounded-br-full text-xs data-[state=active]:bg-transparent data-[state=active]:border-none"
                     >
                       Preview
                     </TabsTrigger>
@@ -115,44 +115,7 @@ export default function Home() {
               <TabsContent value="preview">
                 <div className="flex-1 px-1">
                   <div className="flex gap-4 h-fit w-full bg-zinc-300/20 dark:bg-accent/20 rounded-2xl p-4">
-                    <div className="flex flex-col gap-4 h-full text-sm">
-                      {fileStructure.map((file, index) => (
-                        <div key={index}>
-                          <div className="flex items-center gap-2">
-                            {file.title === "actions" ? (
-                              <FolderOpenIcon className="size-4" />
-                            ) : (
-                              <FolderClosedIcon className="size-4" />
-                            )}
-                            <span>{file.title}</span>
-                          </div>
-
-                          {file.file_items?.length ? (
-                            <div
-                              className={clsx(
-                                `flex flex-col mt-3 border-l gap-3 ml-3 pl-4`,
-                              )}
-                            >
-                              {file.file_items.map((item, _idx) => (
-                                <span
-                                  key={_idx}
-                                  className={clsx(``, {
-                                    "bg-zinc-300/20 dark:bg-zinc-400/10 px-2 py-[0.1rem] rounded-sm":
-                                      _idx === 0,
-                                  })}
-                                >
-                                  {item}
-                                </span>
-                              ))}
-                            </div>
-                          ) : null}
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="flex-1 overflow-y-auto h-fit">
-                      <CodeBlock>{codeString}</CodeBlock>
-                    </div>
+                    Preview
                   </div>
                 </div>
               </TabsContent>

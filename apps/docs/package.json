@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --max-warnings 0",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "registry:build": "shadcn build"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.9",
@@ -36,6 +37,7 @@
     "react-dom": "^19.1.0",
     "react-shiki": "^0.7.3",
     "rehype-pretty-code": "^0.14.1",
+    "shadcn": "2.9.3-canary.0",
     "shiki": "^3.11.0",
     "tailwind-merge": "^3.3.0"
   },

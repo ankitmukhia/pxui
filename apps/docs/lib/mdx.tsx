@@ -16,10 +16,7 @@ export const mdxComponents: MDXComponents = {
     <h3 className="text-xl font-bold" {...props} />
   ),
   p: ({ className, ...props }: React.ComponentProps<"p">) => (
-    <p
-      className={cn("text-md text-sidebar-foreground", className)}
-      {...props}
-    />
+    <p className={cn("-mt-3 text-sidebar-foreground", className)} {...props} />
   ),
   ul: ({ children, ...props }) => (
     <ul
@@ -36,7 +33,7 @@ export const mdxComponents: MDXComponents = {
   ),
   a: (props: React.ComponentProps<"a">) => (
     <a
-      className="text-teal-500/90 hover:underline hover:underline-offset-4"
+      className="text-lime-400 hover:underline hover:underline-offset-4"
       target="_blank"
       {...props}
     />

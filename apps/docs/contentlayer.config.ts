@@ -3,7 +3,7 @@ import rehypePreetyCode, { type Options } from "rehype-pretty-code";
 import { Ui } from "./content/definations/ui";
 
 const options: Options = {
-  theme: "vesper",
+  theme: "plastic",
   keepBackground: false,
 };
 

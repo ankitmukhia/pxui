@@ -26,24 +26,35 @@ export const ROUTES: RoutesConfig = {
       title: "Buttons",
       items: [
         {
-          title: "Hover me",
-          href: "/docs/hover-me",
+          title: "Hover slash",
+          href: "/docs/hover-slash",
         },
         {
-          title: "Error",
-          href: "/docs/error",
+          title: "Hover glow",
+          href: "/docs/hover-glow",
         },
         {
-          title: "Success",
-          href: "/docs/success",
+          title: "Aesthetic",
+          href: "/docs/aesthetic",
         },
       ],
     },
     {
       title: "Components",
       items: [
-        { title: "Menu (Dropdown)", href: "/docs/menu" },
-        { title: "Listbox (Select)", href: "/docs/listbox" },
+        {
+          title: "Profile card",
+          href: "/docs/profile-card",
+        },
+      ],
+    },
+    {
+      title: "Badges",
+      items: [
+        {
+          title: "Aesthetic",
+          href: "/docs/aesthetic-badges",
+        },
       ],
     },
   ],

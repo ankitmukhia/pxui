@@ -4,24 +4,54 @@ status: published
 description: Install with ease
 ---
 
-## Installation
+# Installation
+
+Pxui is a actionable, library built on top of [shadcn/ui](https://ui.shadcn.com). It’s designed to make experimenting with design easy — from trying out small tweaks to dropping in full components. The goal is not to be a finished end to end, but a flexible collection you can install, explore, and adapt for your own projects.
+
+### Setup [Next.js](https://nextjs.org) project with [shadcn/ui](https:ui.shadcn.com).
 
 ```bash
-pnpm create-next-app@latest
+pnpm create next-app@latest pxui-exp --yes
+cd pxui-exp
+pnpm dev
 ```
+
+### Setup shadcn now. Note: add `-d` for shacn default settings
 
 ```bash
-npx shadcn@latest init
+pnpm dlx shadcn@latest init -d
 ```
 
-```js
-import { useState } from "react";
+### Configure components.json
 
-export const Card = () => {
-  return (
-    <div className="bg-gree-400/40 border border-zinc-400/20">
-      This is custom card.
-    </div>
-  );
-};
+`init` command askes you to configure `components.json`
+
+```text
+Which style would you like to use? › New York
+Which color would you like to use as base color? › Zinc
+Do you want to use CSS variables for colors? › yes
+```
+
+### Install additional dependencies
+
+Some components need extra dependencies. You can install them as you go, or just add them all upfront if you plan to explore widely:
+
+```bash
+pnpm add motion
+pnpm add lucide-react
+```
+
+Add some base shadcn components
+
+```bash
+pnpm dlx shadcn@latest add button
+pnpm dlx shadcn@latest add card
+pnpm dlx shadcn@latest add dialog
+pnpm dlx shadcn@latest add separator
+```
+
+### At last, add pxui components
+
+```bash
+pnpm dlx shadcn@latest add ""
 ```

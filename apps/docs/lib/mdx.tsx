@@ -33,7 +33,7 @@ export const mdxComponents: MDXComponents = {
   ),
   a: (props: React.ComponentProps<"a">) => (
     <a
-      className="text-lime-400 hover:underline hover:underline-offset-4"
+      className="text-lime-500 dark:text-lime-400 hover:underline hover:underline-offset-4"
       target="_blank"
       {...props}
     />

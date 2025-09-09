@@ -15,7 +15,7 @@ export function CompPreview({
   name: string;
   variants: string;
 }) {
-	const Code = Components[name]?.code;
+  const Code = Components[name]?.code;
 
   const Preview = React.useMemo(() => {
     const Component = Components[name]?.component;
@@ -76,13 +76,8 @@ export function CompPreview({
             </React.Suspense>
           </TabsContent>
 
-          <TabsContent
-            value="code"
-            className="w-full"
-          >
-						<CodeBlock showLineNumbers={false}>
-							{Code}
-						</CodeBlock>
+          <TabsContent value="code" className="w-full">
+            <CodeBlock>{Code}</CodeBlock>
           </TabsContent>
         </CardContent>
       </Tabs>

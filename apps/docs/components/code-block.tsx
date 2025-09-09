@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 import ShikiHighlighter from "react-shiki";
 
-export function CodeBlock({ children, showLineNumbers = true }: { children: string, showLineNumbers?: boolean }) {
+export function CodeBlock({ children }: { children: string }) {
   const { theme } = useTheme();
 
   return (

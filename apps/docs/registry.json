@@ -2,5 +2,66 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "pxui",
   "homepage": "https://pxui-docs.vercel.app",
-  "items": []
+  "items": [
+		{
+      "name": "hover-slash",
+      "type": "registry:block",
+      "title": "Hover Slash",
+      "description": "A simple hover slash button",
+      "files": [
+        {
+          "path": "registry/pxui/ui/hover-slash.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+		{
+      "name": "hover-glow",
+      "type": "registry:block",
+      "title": "Hover Glow",
+      "description": "A simple hover glow button",
+      "files": [
+        {
+          "path": "registry/pxui/ui/hover-glow.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+		{
+      "name": "aesthetic-badge",
+      "type": "registry:block",
+      "title": "Aesthetic Badge",
+      "description": "A simple aesthetic badge button",
+      "files": [
+        {
+          "path": "registry/pxui/ui/aesthetic-badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+		{
+      "name": "aesthetic-button",
+      "type": "registry:block",
+      "title": "Aesthetic Button",
+      "description": "A simple aesthetic button",
+      "files": [
+        {
+          "path": "registry/pxui/ui/aesthetic-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+		{
+      "name": "profile-card",
+      "type": "registry:block",
+      "title": "Profile Card",
+      "description": "A Cool looking portfolio profile card",
+      "files": [
+        {
+          "path": "registry/pxui/ui/profile-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+	]
 }

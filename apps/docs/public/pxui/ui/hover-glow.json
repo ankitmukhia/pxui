@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-glow",
+  "type": "registry:block",
+  "title": "Hover Glow",
+  "description": "A simple hover glow button",
+  "files": [
+    {
+      "path": "registry/pxui/ui/hover-glow.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport default function OrangeGlowButton({\n\tchildren,\n  className,\n  ...props\n}: {\n\tchildren: React.ReactNode;\n  className?: string;\n}) {\n  return (\n    <button\n      className={cn(\n        `\n        relative\n        h-12\n        px-8\n        rounded-lg\n        text-white\n        cursor-pointer\n        font-medium\n        bg-gradient-to-b from-[#FF9366] to-[#F97316]\n        hover:shadow-orange-400\n        transition-all\n        duration-200\n        transform\n        hover:scale-105\n        border-2\n        border-white/40\n        before:absolute\n        before:inset-[-3px]\n        before:-z-10\n        before:rounded-lg\n        before:bg-orange-400/80\n        before:opacity-70\n        before:blur-[3px]\n        before:content-['']\n      `,\n        className,\n      )}\n      {...props}\n    >\n\t\t {children}\n    </button>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

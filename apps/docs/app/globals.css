@@ -154,10 +154,17 @@ figcaption {
 }
 
 pre {
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
   overflow-x: auto;
   padding: 1rem 0;
   font-size: 1rem;
 }
+
+pre::-webkit-scrollbar {
+  display: none; 
+}
+
 
 pre [data-line] {
   padding: 0 1rem;

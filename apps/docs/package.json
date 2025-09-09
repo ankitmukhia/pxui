@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint --max-warnings 0",
     "check-types": "tsc --noEmit",
-    "registry:build": "shadcn build"
+    "registry:build": "shadcn build --output ./public/pxui/ui"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.9",

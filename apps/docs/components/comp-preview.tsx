@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Components } from "@/content/examples/index";
 import { CopyIcon } from "lucide-react";
+import { CodeBlock } from "@/components/code-block";
 
 export function CompPreview({
   children,
@@ -14,6 +15,8 @@ export function CompPreview({
   name: string;
   variants: string;
 }) {
+	const Code = Components[name]?.code;
+
   const Preview = React.useMemo(() => {
     const Component = Components[name]?.component;
 
@@ -51,13 +54,13 @@ export function CompPreview({
           <TabsList className="flex space-x-1 bg-transparent p-0">
             <TabsTrigger
               value="preview"
-              className="data-[state=active]:shadow-none data-[state=active]:bg-gray-100 text-sm font-medium px-4 border-0"
+              className="data-[state=active]:shadow-none data-[state=active]:bg-gray-100 text-sm font-medium px-4 border-0 cursor-pointer"
             >
               Preview
             </TabsTrigger>
             <TabsTrigger
               value="code"
-              className="data-[state=active]:shadow-none data-[state=active]:bg-gray-100 text-sm font-medium px-4 border-0"
+              className="data-[state=active]:shadow-none data-[state=active]:bg-gray-100 text-sm font-medium px-4 border-0 cursor-pointer"
             >
               Code
             </TabsTrigger>
@@ -75,9 +78,11 @@ export function CompPreview({
 
           <TabsContent
             value="code"
-            className="w-full flex justify-center items-center"
+            className="w-full"
           >
-            Code
+						<CodeBlock showLineNumbers={false}>
+							{Code}
+						</CodeBlock>
           </TabsContent>
         </CardContent>
       </Tabs>

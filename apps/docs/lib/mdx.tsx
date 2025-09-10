@@ -3,12 +3,32 @@ import { Card } from "@/components/ui/card";
 import { Note } from "@/components/ui/note";
 import { CompPreview } from "@/components/comp-preview";
 import { CopyButton } from "@/components/ui/copy-button";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
+
+const NextLink = ({
+  children,
+  href,
+}: {
+  children: React.ReactNode;
+  href: string;
+}) => {
+  return (
+    <Link
+      href={href}
+      target="_blank"
+      className="underline underline-offset-3 text-lime-500 dark:text-lime-400 tracking-wider"
+    >
+      @{children}
+    </Link>
+  );
+};
 
 export const mdxComponents: MDXComponents = {
   Card,
   Note,
   CompPreview,
+  NextLink,
   h1: (props: React.ComponentProps<"h1">) => (
     <h2 className="text-3xl font-bold" {...props} />
   ),

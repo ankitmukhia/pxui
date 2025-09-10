@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 
-export default function OrangeGlowButton({
+export default function GlowButton({
 	children,
   className,
   ...props

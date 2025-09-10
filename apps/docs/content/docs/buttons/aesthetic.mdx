@@ -13,4 +13,28 @@ It a simple and visually appealing animated hover me button with light orange as
   variants="default,black,blue,purple,green,gray,red"
 >Aesthetic Button</CompPreview>
 
-<Note>Verson 2 of Headless is only compatable with React 18. If you are still to use React 17 or later, please use version 1.</Note>
+## Installation
+
+```bash
+pnpm dlx shadcn@latest add "https://pxui-docs.vercel.app/pxui/ui/aesthetic-button.json"
+```
+
+## Usage
+
+```tsx
+import AestheticButton from "@/components/aesthetic-button";
+```
+
+```js /variant="black"/#v /variant="blue"/#v /variant="purple"/#v /variant="green"/#v /variant="gray"/#v /variant="red"/#v
+<AestheticButton variant="black">Hover me</AestheticButton>
+
+<AestheticButton variant="blue">Hover me</AestheticButton>
+
+<AestheticButton variant="purple">Hover me</AestheticButton>
+
+<AestheticButton variant="green">Hover me</AestheticButton>
+
+<AestheticButton variant="gray">Hover me</AestheticButton>
+
+<AestheticButton variant="red">Hover me</AestheticButton>
+```

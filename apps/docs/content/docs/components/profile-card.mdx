@@ -9,3 +9,24 @@ description: Profile card for portfilio
 Profile card for your prtfolio.
 
 <CompPreview name="profile-card" />
+
+<Note>This profile card was designed and shared on twtter by <NextLink href="https://x.com/heysatya_">Satya</NextLink>. I loved the design and coded this out. All thanks to Satya for sharing desing.</Note>
+
+## Installation
+
+```bash
+pnpm dlx shadcn@latest add "https://pxui-docs.vercel.app/pxui/ui/profile-card.json"
+```
+
+## Usage
+
+```tsx
+import ProfileCard from "@/components/profile-card";
+```
+
+```tsx /hireme=/#v /copyemail=/#v
+<ProfileCard 
+   hireme="https://x.com/ankitmukhya" 
+   copyemail="ankitmukhia157@gmail.com" 
+/>
+```

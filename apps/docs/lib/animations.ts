@@ -10,32 +10,20 @@ export const containerVariant = {
   },
 };
 
-export const itemsVariant = {
+export const itemsVariants = {
   hidden: {
     opacity: 0,
-		y: -10 
+    y: -20,
+    filter: "blur(10px)" 
   },
   visible: {
     opacity: 1,
-		y: 0,
+    y: 0,
+    filter: "blur(0px)",
     transition: {
-			delay: 0.25,
-      duration: 0.30,
-			when: "beforeChildren"
+      duration: 0.25,
+      delay: 0.5,
     },
   },
 };
 
-export const itemsChildrenVariant = {
-  hidden: {
-    opacity: 0,
-		y: -8
-  },
-  visible: {
-    opacity: 1,
-		y: 0,
-    transition: {
-      duration: 0.60,
-    },
-  },
-};

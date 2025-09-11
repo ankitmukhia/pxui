@@ -4,12 +4,8 @@ import { ChevronRight } from "lucide-react";
 import { FolderOpenIcon, FolderClosedIcon } from "@/lib/svg-icons";
 import { fileStructure, codeString } from "@/lib/constants";
 import { motion } from "motion/react";
-import {
-  containerVariant,
-  itemsVariant,
-  itemsChildrenVariant,
-} from "@/lib/animations";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { containerVariant, itemsVariants } from "@/lib/animations";
 import { CodeBlock } from "@/components/code-block";
 import Link from "next/link";
 import { clsx } from "clsx";
@@ -20,11 +16,11 @@ export default function Home() {
       variants={containerVariant}
       initial="hidden"
       animate="visible"
-      className="flex flex-col min-h-svh max-w-6xl mx-auto px-4 xl:px-0 my-4 lg:my-0"
+      className="flex flex-col min-h-svh max-w-6xl mx-auto px-4 xl:px-0 my-4 md:my-0"
     >
       <motion.div
-        variants={itemsVariant}
-        className="flex flex-col items-start mt-2 xl:mt-10 xl:items-center space-y-4"
+        variants={itemsVariants}
+        className="flex flex-col items-start mt-2 md:mt-10 xl:items-center space-y-4"
       >
         <h1 className="text-5xl font-medium -tracking-[0.18rem]">
           Experiment. Learn. Use
@@ -34,18 +30,16 @@ export default function Home() {
           experiments, i build and learn along the way.
         </p>
 
-        <motion.div variants={itemsChildrenVariant}>
-          <Link
-            href="/docs"
-            className="flex items-center justtify-center mt-4 text-[0.85rem] text-white bg-[#171717] hover:bg-[#171717]/90 dark:bg-[#fa7319] dark:hover:bg-[#fa7319]/90 h-11 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 dark:border-white/10 outline-0"
-          >
-            Get Started - for free
-            <ChevronRight size={18} />
-          </Link>
-        </motion.div>
+        <Link
+          href="/docs"
+          className="flex items-center justtify-center mt-4 text-[0.85rem] text-white bg-[#171717] hover:bg-[#171717]/90 dark:bg-[#fa7319] dark:hover:bg-[#fa7319]/90 h-11 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 dark:border-white/10 outline-0"
+        >
+          Get Started - for free
+          <ChevronRight size={18} />
+        </Link>
       </motion.div>
 
-      <motion.div variants={itemsVariant} className="mt-10 xl:mt-10">
+      <motion.div variants={itemsVariants} className="mt-10 xl:mt-10">
         <Tabs defaultValue="code">
           <div className="flex flex-col border-2 h-fit rounded-3xl">
             <div className="flex h-fit items-center justify-between px-4 py-2">
@@ -75,7 +69,7 @@ export default function Home() {
 
                   <TabsTrigger
                     value="preview"
-                    className="flex w-13 py-1 bg-transparent cursor-pointer rounded-none rounded-tl-full rounded-bl-full text-xs data-[state=active]:border-none data-[state=active]:shadow-sm"
+                    className="flex w-13 py-1 bg-transparent cursor-pointer rounded-none rounded-tr-full rounded-br-full text-xs data-[state=active]:border-none data-[state=active]:shadow-sm"
                   >
                     Preview
                   </TabsTrigger>

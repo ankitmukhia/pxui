@@ -12,7 +12,7 @@ export default function DocsLayout({
     <div className="min-h-screen" suppressHydrationWarning>
       <SiteHeader />
 
-      <div className="flex max-w-5xl mx-auto px-6 lg:px-0 gap-10 w-full">
+      <div className="flex max-w-5xl mx-auto px-6 xl:px-0 gap-10 w-full">
         <aside className="h-[calc(100vh-3.5rem)] fixed top-13 z-20 hidden shrink-0 lg:sticky lg:block">
           <div className="h-full overflow-auto scrollbar-hidden py-6 lg:py-8">
             <AppSidebar />

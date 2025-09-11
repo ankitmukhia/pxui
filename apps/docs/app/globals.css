@@ -165,7 +165,6 @@ pre::-webkit-scrollbar {
   display: none; 
 }
 
-
 pre [data-line] {
   padding: 0 1rem;
 }
@@ -179,6 +178,5 @@ pre.shiki {
 }
 
 [data-highlighted-chars] {
-  @apply bg-zinc-600/50 rounded;
-  box-shadow: 0 0 0 4px rgb(82 82 91 / 0.5);
+  @apply bg-zinc-500/25 dark:bg-zinc-500/50 rounded shadow-2xl;
 }

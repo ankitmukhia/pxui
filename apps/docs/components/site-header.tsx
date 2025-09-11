@@ -12,7 +12,7 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 flex w-full items-center py-2 px-6 lg:px-0",
+        "sticky top-0 z-50 flex w-full items-center py-2 px-6 xl:px-0",
 
         "bg-zinc-100/20 dark:bg-zinc-900/20 bg-clip-padding backdrop-filter backdrop-blur-xs border-b",
       )}

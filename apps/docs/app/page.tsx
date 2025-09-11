@@ -1,7 +1,14 @@
+"use client";
+
 import { ChevronRight } from "lucide-react";
 import { FolderOpenIcon, FolderClosedIcon } from "@/lib/svg-icons";
 import { fileStructure, codeString } from "@/lib/constants";
-// import { CoreFeatures } from "@/components/core-features";
+import { motion } from "motion/react";
+import {
+  containerVariant,
+  itemsVariant,
+  itemsChildrenVariant,
+} from "@/lib/animations";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CodeBlock } from "@/components/code-block";
 import Link from "next/link";
@@ -9,8 +16,16 @@ import { clsx } from "clsx";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-svh max-w-6xl mx-auto px-4 xl:px-0 my-4 lg:my-0">
-      <div className="flex flex-col items-start mt-2 xl:mt-10 xl:items-center space-y-4">
+    <motion.div
+      variants={containerVariant}
+      initial="hidden"
+      animate="visible"
+      className="flex flex-col min-h-svh max-w-6xl mx-auto px-4 xl:px-0 my-4 lg:my-0"
+    >
+      <motion.div
+        variants={itemsVariant}
+        className="flex flex-col items-start mt-2 xl:mt-10 xl:items-center space-y-4"
+      >
         <h1 className="text-5xl font-medium -tracking-[0.18rem]">
           Experiment. Learn. Use
         </h1>
@@ -19,16 +34,18 @@ export default function Home() {
           experiments, i build and learn along the way.
         </p>
 
-        <Link
-          href="/docs"
-          className="flex items-center justtify-center mt-4 text-[0.85rem] text-white bg-[#171717] hover:bg-[#171717]/90 dark:bg-[#fa7319] dark:hover:bg-[#fa7319]/90 h-11 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 dark:border-white/10 outline-0"
-        >
-          Get Started - for free
-          <ChevronRight size={18} />
-        </Link>
-      </div>
+        <motion.div variants={itemsChildrenVariant}>
+          <Link
+            href="/docs"
+            className="flex items-center justtify-center mt-4 text-[0.85rem] text-white bg-[#171717] hover:bg-[#171717]/90 dark:bg-[#fa7319] dark:hover:bg-[#fa7319]/90 h-11 px-3.5 rounded-xl inset-shadow-sm inset-shadow-white/60 font-medium border border-black/4 dark:border-white/10 outline-0"
+          >
+            Get Started - for free
+            <ChevronRight size={18} />
+          </Link>
+        </motion.div>
+      </motion.div>
 
-      <div className="mt-10 xl:mt-10">
+      <motion.div variants={itemsVariant} className="mt-10 xl:mt-10">
         <Tabs defaultValue="code">
           <div className="flex flex-col border-2 h-fit rounded-3xl">
             <div className="flex h-fit items-center justify-between px-4 py-2">
@@ -47,7 +64,7 @@ export default function Home() {
 
               <div className="text-sm tracking-wider">pxui.com</div>
 
-              <TabsList className="h-7 rounded-full">
+              <TabsList className="h-7 rounded-full bg-zinc-300/20 dark:bg-zinc-300/5 shadow-none">
                 <div className="flex items-center justify-center p-0">
                   <TabsTrigger
                     value="code"
@@ -120,7 +137,7 @@ export default function Home() {
             </TabsContent>
           </div>
         </Tabs>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

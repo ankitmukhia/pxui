@@ -10,7 +10,7 @@ export function CodeBlock({ children }: { children: string }) {
     <ShikiHighlighter
       language="tsx"
 			showLanguage={false}
-      theme={theme === "dark" ? "vesper" : "solarized-light"}
+      theme={theme === "light" ? "solarized-light" : "vesper" }
       showLineNumbers
 			addDefaultStyles={false}
       style={{ 

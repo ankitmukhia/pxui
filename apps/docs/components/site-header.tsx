@@ -3,6 +3,7 @@
 // import { SidebarIcon } from "lucide-react";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 /* import { useSidebar } from "@/components/ui/sidebar"; */
 
 export function SiteHeader() {
@@ -17,7 +18,9 @@ export function SiteHeader() {
       )}
     >
       <div className="flex w-full max-w-5xl mx-auto items-center justify-between">
-        <h1 className="font-molle text-xl">Pxui</h1>
+        <Link href="/">
+          <h1 className="font-molle text-xl">Pxui</h1>
+        </Link>
 
         <ModeToggle />
       </div>

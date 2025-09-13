@@ -57,5 +57,14 @@ export const ROUTES: RoutesConfig = {
         },
       ],
     },
+    {
+      title: "Inputs",
+      items: [
+        {
+          title: "Gradient Input",
+          href: "/docs/gradient-chat-input",
+        },
+      ],
+    },
   ],
 };

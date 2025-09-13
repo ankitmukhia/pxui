@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 
-export default function GlowButton({
+export function GlowButton({
 	children,
   className,
   ...props

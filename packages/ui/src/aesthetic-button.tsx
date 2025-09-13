@@ -29,7 +29,7 @@ const buttonVariants = cva(
   },
 );
 
-export default function Button({
+export function AestheticButton({
   children,
   className,
   variant,

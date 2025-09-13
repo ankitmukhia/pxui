@@ -18,6 +18,8 @@ interface ProvidesType {
 
 interface PricingCardTypes {
   plan: string;
+  description: string;
+  per?: string;
   price: string;
   provides: ProvidesType[];
 }
@@ -25,30 +27,39 @@ interface PricingCardTypes {
 export const pricingCard: PricingCardTypes[] = [
   {
     plan: "Starter",
+		description: "Begin Your Journey",
     price: "Free",
     provides: [
-      { title: "Pro two-week trial" },
-      { title: "200 completions per month" },
-      { title: "50 requests per month" },
+      { title: "Listing Managment" },
+      { title: "Transaction Security" },
+      { title: "Basic Analytics" },
     ],
   },
   {
     plan: "Pro",
-    price: "19/mo",
+		description: "Expand Your Reach",
+    price: "$19",
+		per: "month",
     provides: [
-      { title: "Unlimited completions" },
-      { title: "500 requests per month" },
-      { title: "Priority email support" },
+      { title: "Listing Managment" },
+      { title: "Transaction Security" },
+      { title: "Advanced Analytics" },
+      { title: "Document Managment" },
+      { title: "Priority Customer Support" },
     ],
   },
   {
     plan: "Enterprise",
-    price: "49/mo",
+		description: "Unlock Unlimited Potential",
+    price: "$96",
+		per: "month",
     provides: [
-      { title: "Unlimited completions" },
-      { title: "Unlimited requests" },
-      { title: "Dedicated account manager" },
-      { title: "24/7 premium support" },
+      { title: "Listing Managment" },
+      { title: "Transaction Security" },
+      { title: "Advanced Analytics" },
+      { title: "Document Managment" },
+      { title: "Priority Customer Support" },
+      { title: "Premium Support" },
     ],
   },
 ];

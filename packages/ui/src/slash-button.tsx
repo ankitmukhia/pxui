@@ -8,7 +8,7 @@ interface SlashButtonProps {
   className?: string;
 }
 
-export default function SlashButton({
+export function SlashButton({
   children,
   className,
   ...props

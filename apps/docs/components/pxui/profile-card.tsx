@@ -22,7 +22,7 @@ interface ProfileCardProps {
   copyEmailClick: () => void;
 }
 
-export default function ProfileCard({
+export function ProfileCard({
   hireOnClick,
   copyEmailClick,
 }: ProfileCardProps) {

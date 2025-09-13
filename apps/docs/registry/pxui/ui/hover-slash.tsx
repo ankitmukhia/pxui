@@ -8,7 +8,7 @@ interface HoverSlashProps {
   className?: string;
 }
 
-export default function HoverSlash({
+export function HoverSlash({
   children,
   className,
   ...props

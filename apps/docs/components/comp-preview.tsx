@@ -48,7 +48,7 @@ export function CompPreview({
   }, [children, name, variants, props]);
 
   return (
-    <Card className="min-h-[20rem] outline-2 outline-offset-3 outline-zinc-700/20">
+    <Card className="min-h-[20rem] outline-2 outline-offset-3 outline-zinc-700/8">
       <Tabs defaultValue="preview" className="w-full">
         <CardHeader className="flex justify-between items-center">
           <TabsList className="flex space-x-1 bg-transparent p-0">

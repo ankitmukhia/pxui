@@ -3,10 +3,13 @@ import {
   ZapIcon,
   RotateCw as RotateIcon,
   BadgeCheckIcon,
-  DollarSignIcon,
+  AudioLinesIcon,
+  PlusIcon,
+  ImagePlusIcon,
 } from "lucide-react";
 import { SunIcon, MoonIcon } from "@/lib/svg-icons";
 import { pricingCard } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 
 // const imageUrl = "https://plus.unsplash.com/premium_photo-1746637466037-001842a48d31?q=80&w=967&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -27,42 +30,98 @@ function getCurrentTime() {
   return `${hours}:${minutes}${ampm}`;
 }
 
+/* <ModeToggle />
+<ProfileCard />
+<SecondSetOfComponents />
+<ThirdSetOfComponents />
+<StatusTags /> */
+
 export default function ExpPage() {
   return (
-    <>
-      <div className="flex flex-col gap-4 pt-4 max-w-xl px-2 mx-auto">
-        <ModeToggle />
-        <ProfileCard />
-        <SecondSetOfComponents />
-        <ThirdSetOfComponents />
-        <StatusTags />
+    <div className="flex flex-col justify-center gap-4 pt-4 max-w-5xl px-5 mx-auto border-l border-r min-h-svh"></div>
+  );
+}
+
+function ChatInput() {
+  return (
+    <div>
+      <form className="bg-zinc-50 dark:bg-zinc-100 rounded-xl">
+        <textarea
+          placeholder="Ask anything"
+          className="resize-none bg-transparent px-3 placeholder:text-gray-400/60 placeholder:font-medium field-sizing-content min-h-10 max-h-80 p-2 w-full border-none outline-0 focus:ring-0"
+        />
+      </form>
+      <ModeToggle />
+      <div className="bg-linear-to-r/longer from-pink-100 via-orange-100 to-orange-100 dark:from-purple-300 dark:via-blue-300 dark:to-blue-300 p-1 rounded-2xl shadow-2xl shadow-blue-200 dark:shadow-blue-200/60">
+        <form className="bg-zinc-50 dark:bg-zinc-100 rounded-xl">
+          <textarea
+            placeholder="Ask anything"
+            className="resize-none bg-transparent px-3 placeholder:text-gray-400/60 placeholder:font-medium field-sizing-content min-h-8 max-h-80 p-2 w-full border-none outline-0 focus:ring-0"
+          />
+
+          <div className="flex items-center justify-between px-2 pb-2">
+            <div className="flex items-center gap-2">
+              <button className="p-2 bg-zinc-50 rounded-lg border border-white shadow-sm">
+                <PlusIcon className="size-4 text-black" />
+              </button>
+              <button className="p-2 bg-zinc-50 rounded-lg border border-white shadow-sm">
+                <PlusIcon className="size-4 text-black" />
+              </button>
+            </div>
+
+            <button className="p-2 bg-zinc-50 rounded-lg border border-white shadow-sm">
+              <AudioLinesIcon className="size-4 text-black" />
+            </button>
+          </div>
+        </form>
       </div>
-      <div className="max-w-4xl mx-auto my-10">
-        <PricingCard />
-      </div>
-    </>
+    </div>
   );
 }
 
 function PricingCard() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2">
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3">
       {pricingCard.map((pricingDetails, _idx) => (
         <div
           key={pricingDetails.plan}
-          className="flex flex-col justify-between space-y-4 border-2 px-[.90rem] py-4 rounded-2xl"
+          className={cn(
+            "relative flex flex-col justify-between space-y-4 px-[.90rem] py-6 rounded-2xl bg-neutral-900 shadow-[0px_0px_3px_0px_rgba(64,64,64)]",
+            {
+              "": _idx === 1,
+            },
+          )}
         >
-          <div className="space-y-5">
-            <h4 className="text-xl">{pricingDetails.plan}</h4>
+          {_idx === 1 && (
+            <div className="absolute top-0 left-0 h-px w-full bg-linear-to-r from-neutral-800/5 via-orange-500 to-neutral-800/5" />
+          )}
 
-            <div className="flex items-center gap-2">
-              {_idx !== 0 && (
-                <DollarSignIcon size={32} className="self-center" />
-              )}
-              <h1 className="text-4xl">{pricingDetails.price}</h1>
+          <div className="space-y-5">
+            <div className="flex flex-col gap-2">
+              <h4 className="text-xl">{pricingDetails.plan}</h4>
+              <p className="text-sm text-neutral-300/80">
+                {pricingDetails.description}
+              </p>
             </div>
 
-            <div className="border-t-2" />
+            <div className="flex items-center gap-2">
+              <h1 className="text-5xl">{pricingDetails.price}</h1>
+              <p className="text-sm flex items-center gap-1">
+                {pricingDetails.per && <span>/</span>}
+                {pricingDetails.per}
+              </p>
+            </div>
+
+            <button
+              className={cn(
+                `w-full bg-neutral-500/20 h-10 text-sm rounded-lg inset-shadow-xs inset-shadow-neutral-500/30 cursor-pointer`,
+                {
+                  "bg-orange-600 inset-shadow-orange-300": _idx === 1,
+                },
+              )}
+            >
+              Get early access
+            </button>
 
             <div className="space-y-2">
               {pricingDetails.provides.map((providesDetails) => (
@@ -70,16 +129,12 @@ function PricingCard() {
                   key={providesDetails.title}
                   className="flex items-center gap-2"
                 >
-                  <BadgeCheckIcon size={16} />
-                  <p className="text-lg">{providesDetails.title}</p>
+                  <BadgeCheckIcon className="size-4 text-orange-600" />
+                  <p className="text-sm ">{providesDetails.title}</p>
                 </div>
               ))}
             </div>
           </div>
-
-          <button className="w-fit bg-green-400/30 p-2 rounded-xl">
-            Get Started
-          </button>
         </div>
       ))}
     </div>

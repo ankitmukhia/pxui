@@ -1,11 +1,6 @@
 import { cn } from "@/lib/utils";
 
-export default function OrangeGlowButton({
-  className,
-  ...props
-}: {
-  className?: string;
-}) {
+export function GlowButton({ className, ...props }: { className?: string }) {
   return (
     <button
       className={cn(

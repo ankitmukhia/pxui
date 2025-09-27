@@ -27,7 +27,7 @@ interface PricingCardTypes {
 export const pricingCard: PricingCardTypes[] = [
   {
     plan: "Starter",
-		description: "Begin Your Journey",
+    description: "Begin Your Journey",
     price: "Free",
     provides: [
       { title: "Listing Managment" },
@@ -37,9 +37,9 @@ export const pricingCard: PricingCardTypes[] = [
   },
   {
     plan: "Pro",
-		description: "Expand Your Reach",
+    description: "Expand Your Reach",
     price: "$19",
-		per: "month",
+    per: "month",
     provides: [
       { title: "Listing Managment" },
       { title: "Transaction Security" },
@@ -50,9 +50,9 @@ export const pricingCard: PricingCardTypes[] = [
   },
   {
     plan: "Enterprise",
-		description: "Unlock Unlimited Potential",
+    description: "Unlock Unlimited Potential",
     price: "$96",
-		per: "month",
+    per: "month",
     provides: [
       { title: "Listing Managment" },
       { title: "Transaction Security" },

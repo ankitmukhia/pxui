@@ -9,14 +9,14 @@ export function CodeBlock({ children }: { children: string }) {
   return (
     <ShikiHighlighter
       language="tsx"
-			showLanguage={false}
-      theme={theme === "light" ? "solarized-light" : "vesper" }
+      showLanguage={false}
+      theme={theme === "light" ? "solarized-light" : "vesper"}
       showLineNumbers
-			addDefaultStyles={false}
-      style={{ 
-				padding: 0,
-				margin: 0
-			}}
+      addDefaultStyles={false}
+      style={{
+        padding: 0,
+        margin: 0,
+      }}
     >
       {children.trim()}
     </ShikiHighlighter>

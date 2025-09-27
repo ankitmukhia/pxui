@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export function SiteHeader() {
-	const { isMobile, toggleSidebar, open } = useSidebar();
+  const { isMobile, toggleSidebar, open } = useSidebar();
 
   return (
     <header
@@ -18,23 +18,23 @@ export function SiteHeader() {
       )}
     >
       <div className="flex w-full max-w-5xl mx-auto items-center justify-between">
-				{isMobile ? (
-					<>
-						{open ? (
-							<button onClick={() => toggleSidebar()}>
-								<XIcon className="hover:text-lime-400" />
-							</button>
-						) : (
-							<button onClick={() => toggleSidebar()}>
-								<MenuIcon className="hover:text-lime-400" />
-							</button>
-						)}
-					</>
-				) : (
-					<Link href="/">
-						<h1 className="font-molle text-xl">Pxui</h1>
-					</Link>
-				)}
+        {isMobile ? (
+          <>
+            {open ? (
+              <button onClick={() => toggleSidebar()}>
+                <XIcon className="hover:text-lime-400" />
+              </button>
+            ) : (
+              <button onClick={() => toggleSidebar()}>
+                <MenuIcon className="hover:text-lime-400" />
+              </button>
+            )}
+          </>
+        ) : (
+          <Link href="/">
+            <h1 className="font-molle text-xl">Pxui</h1>
+          </Link>
+        )}
 
         <ModeToggle />
       </div>

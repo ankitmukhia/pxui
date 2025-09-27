@@ -8,11 +8,7 @@ interface HoverSlashProps {
   className?: string;
 }
 
-export function HoverSlash({
-  children,
-  className,
-  ...props
-}: HoverSlashProps) {
+export function HoverSlash({ children, className, ...props }: HoverSlashProps) {
   return (
     <button
       className={cn(

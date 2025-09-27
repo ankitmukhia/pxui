@@ -3,11 +3,11 @@
 import { cn } from "@/lib/utils";
 
 export function GlowButton({
-	children,
+  children,
   className,
   ...props
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
   className?: string;
 }) {
   return (
@@ -42,7 +42,7 @@ export function GlowButton({
       )}
       {...props}
     >
-		 {children}
+      {children}
     </button>
   );
 }

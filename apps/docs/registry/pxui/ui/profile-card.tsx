@@ -22,10 +22,7 @@ interface ProfileCardProps {
   copyEmailClick: () => void;
 }
 
-export function ProfileCard({
-  hireOnClick,
-  copyEmailClick,
-}: ProfileCardProps) {
+export function ProfileCard({ hireOnClick, copyEmailClick }: ProfileCardProps) {
   return (
     <div className="relative">
       <div className="relative z-10 bg-stone-950 rounded-[3rem] px-8 py-7 h-55 text-gray-200 shadow-sm shadow-white/10 inset-shadow-sm inset-shadow-white/5">

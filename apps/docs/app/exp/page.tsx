@@ -5,7 +5,6 @@ import {
   BadgeCheckIcon,
   AudioLinesIcon,
   PlusIcon,
-  ImagePlusIcon,
 } from "lucide-react";
 import { SunIcon, MoonIcon } from "@/lib/svg-icons";
 import { pricingCard } from "@/lib/constants";

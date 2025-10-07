@@ -37,7 +37,44 @@ function getCurrentTime() {
 
 export default function ExpPage() {
   return (
-    <div className="flex flex-col justify-center gap-4 pt-4 max-w-5xl px-5 mx-auto border-l border-r min-h-svh"></div>
+    <div className="flex h-screen bg-gray-100 flex-col justify-center items-center px-2 xl:px-0">
+      <div className="bg-white p-2 rounded-3xl">
+        {/* gray div */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 h-full bg-gray-200/50 p-2 rounded-2xl">
+          <div className="flex flex-col gap-4 justify-between bg-transparent border border-gray-200/80 py-6 px-5 rounded-xl">
+            <div className="flex flex-col gap-4">
+              <div>
+                <h1 className="text-lg text-neutral-400 tracking-wide font-medium">
+                  Shaped by your choices,
+                </h1>
+                <h1 className="text-lg font-semibold">Driven by Your Vision</h1>
+              </div>
+
+              <p className="text-xs text-neutral-500">
+                We will use that context when making future suggestions.
+              </p>
+            </div>
+
+            <button className="w-fit text-[10px] tracking-widest text-white bg-neutral-800 hover:bg-neutral-800/95 h-9 px-4 rounded-full cursor-pointer">
+              Train your AI
+            </button>
+          </div>
+
+          {/* dark div */}
+          {/* figure out how to make img take entire box width, and also has the text in it's palce, after that it will take all the image width to height */}
+          <div className="relative py-6 px-5 rounded-xl text-neutral-800">
+            <div className="aspect-square">
+              <Image
+                src="/dark-img.png"
+                alt="ai-image"
+                fill
+                className="object-cover rounded-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

@@ -64,7 +64,7 @@ export function ProfileCard({ hireOnClick, copyEmailClick }: ProfileCardProps) {
         </div>
       </div>
 
-      <div className="absolute -bottom-[18%] left-0 w-full h-[40%] bg-[#7d52fa] rounded-bl-[3rem] rounded-br-[3rem] shadow-lg dark:shadow-stone-700 shadow-stone-400">
+      <div className="absolute inset-x-0 -bottom-[18%] w-full h-[40%] bg-[#7d52fa] rounded-bl-[3rem] rounded-br-[3rem] shadow-lg dark:shadow-stone-700 shadow-stone-400">
         <div className="flex h-full flex-col justify-end items-center text-white p-2 text-sm tracking-wide font-medium">
           <div className="flex items-center gap-2">
             <ZapIcon size={15} /> Currently avaiable for Work

@@ -64,4 +64,13 @@ export const Components: Component = {
     ),
     code: rawCode("../../packages/ui/src/gradient-chat-input.tsx"),
   },
+  "double-card": {
+    name: "double-card",
+    component: React.lazy(() =>
+      import("@/components/pxui/double-card").then((module) => ({
+        default: module.DoubleCard,
+      })),
+    ),
+    code: rawCode("components/pxui/double-card.tsx"),
+  },
 };

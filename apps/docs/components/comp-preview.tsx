@@ -1,8 +1,8 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { CopyButton } from "@/components/ui/copy-button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Components } from "@/content/examples/index";
-import { CopyIcon } from "lucide-react";
 import { CodeBlock } from "@/components/code-block";
 
 export function CompPreview({
@@ -48,7 +48,7 @@ export function CompPreview({
   }, [children, name, variants, props]);
 
   return (
-    <Card className="min-h-[20rem] outline-2 outline-offset-3 outline-zinc-700/8">
+    <Card className="relative min-h-[20rem] outline-2 outline-offset-3 outline-zinc-700/8">
       <Tabs defaultValue="preview" className="w-full">
         <CardHeader className="flex justify-between items-center">
           <TabsList className="flex space-x-1 bg-transparent p-0">
@@ -66,7 +66,7 @@ export function CompPreview({
             </TabsTrigger>
           </TabsList>
 
-          <CopyIcon size={15} className="cursor-pointer" />
+          <CopyButton>{Code}</CopyButton>
         </CardHeader>
 
         <CardContent className="flex justify-center items-center min-h-[18rem]">

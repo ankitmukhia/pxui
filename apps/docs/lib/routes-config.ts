@@ -66,5 +66,14 @@ export const ROUTES: RoutesConfig = {
         },
       ],
     },
+    {
+      title: "Cards",
+      items: [
+        {
+          title: "Double Card",
+          href: "/docs/double-card",
+        },
+      ],
+    },
   ],
 };

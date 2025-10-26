@@ -60,7 +60,7 @@ export const mdxComponents: MDXComponents = {
   ),
   figure: ({ children, ...props }: React.ComponentProps<"figure">) => (
     <figure className="relative" {...props}>
-      <CopyButton>{children}</CopyButton>
+      <CopyButton className="inset-y-0">{children}</CopyButton>
       {children}
     </figure>
   ),

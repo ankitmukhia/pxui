@@ -37,7 +37,7 @@ export function CopyButton({ children, className, ...props }: CopyButtonProps) {
   }
   return (
     <button
-      className={cn("absolute right-0 py-5 px-4 z-10", className)}
+      className={cn("absolute right-5 z-10", className)}
       onClick={copyToClipboard}
       {...props}
     >

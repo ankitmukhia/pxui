@@ -5,11 +5,13 @@ import {
   BadgeCheckIcon,
   AudioLinesIcon,
   PlusIcon,
+  ImagePlusIcon,
 } from "lucide-react";
 import { SunIcon, MoonIcon } from "@/lib/svg-icons";
 import { pricingCard } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/ui/mode-toggle";
+import { clsx } from "clsx";
 
 // const imageUrl = "https://plus.unsplash.com/premium_photo-1746637466037-001842a48d31?q=80&w=967&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
@@ -37,40 +39,190 @@ function getCurrentTime() {
 
 export default function ExpPage() {
   return (
-    <div className="flex h-screen bg-gray-100 flex-col justify-center items-center px-2 xl:px-0">
-      <div className="bg-white p-2 rounded-3xl">
-        {/* gray div */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 h-full bg-gray-200/50 p-2 rounded-2xl">
-          <div className="flex flex-col gap-4 justify-between bg-transparent border border-gray-200/80 py-6 px-5 rounded-xl">
-            <div className="flex flex-col gap-4">
-              <div>
-                <h1 className="text-lg text-neutral-400 tracking-wide font-medium">
-                  Shaped by your choices,
-                </h1>
-                <h1 className="text-lg font-semibold">Driven by Your Vision</h1>
-              </div>
+    <div className="flex h-screen bg-neutral-800 flex-col items-center justify-center px-2 xl:px-0">
+      <SimpleChatInput />
+    </div>
+  );
+}
 
-              <p className="text-xs text-neutral-500">
-                We will use that context when making future suggestions.
-              </p>
+function SimpleChatInput() {
+  return (
+    <form className="relative bg-white rounded-3xl p-2 border shadow-sm dark:shadow-neutral-300">
+      <textarea
+        placeholder="Message"
+        spellCheck={false}
+        className="resize-none min-h-12 max-h-40 px-3 py-2 text-black field-sizing-content placeholder:font-semibold placeholder:text-neutral-400 w-3xl outline-0 foucus:ring-0"
+      />
+
+      <div className="flex items-center justify-between">
+        <button className="flex items-center gap-2 border bg-neutral-50 rounded-full py-[5px] px-3 text-neutral-500 font-semibold cursor-pointer">
+          <ImagePlusIcon className="size-5" /> Attach Image
+        </button>
+
+        <button className="flex items-center gap-2 border bg-neutral-100 rounded-full py-[5px] px-3 text-neutral-500 font-semibold inset-shadow-sm inset-shadow-white cursor-pointer">
+          <AudioLinesIcon className="size-5" /> Voice
+        </button>
+      </div>
+    </form>
+  );
+}
+
+function MobileAuthDesign() {
+  return (
+    <div className="relative border rounded-3xl border-neutral-200/10 overflow-hidden">
+      <div className="absolute inset-x-0 z-100 flex flex-col gap-3 justify-end h-full p-4 text-white">
+        <h1 className="text-xl font-semibold">Welcome to Pxui</h1>
+        <p className="text-xs text-white/70 tracking-wider w-[16rem] text-wrap">
+          AI-native, privacy-first, inbox that manages itself.
+        </p>
+
+        <div className="space-y-2 mt-3">
+          <CuttedEdgeBorderButton>Continue with Google</CuttedEdgeBorderButton>
+
+          <CuttedEdgeBorderButton>Continue with Apple</CuttedEdgeBorderButton>
+
+          <PlusEdgeBorderButton>Continue with Plus</PlusEdgeBorderButton>
+
+          <PlusEdgeBorderButton>Continue with Plus+</PlusEdgeBorderButton>
+
+          <PlusEdgeBorderButton
+            strokeColor="orange"
+            className="!bg-orange-300/20 !border-orange-300/50 !text-orange-300"
+          >
+            Continue with Email
+          </PlusEdgeBorderButton>
+        </div>
+      </div>
+      <div className="relative h-[40rem] w-[21rem] rounded-5xl">
+        <Image
+          src="/dark-img.png"
+          alt="ai-image"
+          fill
+          className="object-fill rounded-2xl mask-y-from-60%"
+        />
+      </div>
+    </div>
+  );
+}
+
+function PlusEdgeBorderButton({
+  children,
+  className,
+  strokeColor = "white",
+}: {
+  children: React.ReactNode;
+  className?: string;
+  strokeColor?: string;
+}) {
+  return (
+    <div className="relative">
+      {Array.from({ length: 4 }).map((_, index) => (
+        <svg
+          key={index}
+          className={clsx("absolute z-100", {
+            "rotate-90 -bottom-[5px] -left-[5px]": index === 0,
+            "-right-[5px] -bottom-[5px]": index === 1,
+            "rotate-180 -top-[5px] -left-[5px]": index === 2,
+            "-rotate-90 -top-[5px] -right-[5px]": index === 3,
+          })}
+          width="10"
+          height="10"
+          viewBox="0 0 10 10"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M4.5 10L4.5 0.000732422" stroke={strokeColor} />
+          <path d="M10 4.5H0" stroke={strokeColor} />
+        </svg>
+      ))}
+      <button
+        className={clsx(
+          "w-full bg-clip-padding bg-zinc-300/10 backdrop-filter backdrop-blur-xs border border-white/60 bg-opacity-5 h-10 px-3 text-sm",
+          className,
+        )}
+      >
+        {children}
+      </button>
+    </div>
+  );
+}
+
+function CuttedEdgeBorderButton({
+  children,
+  className,
+  strokeColor = "white",
+}: {
+  children: React.ReactNode;
+  className?: string;
+  strokeColor?: string;
+}) {
+  return (
+    <div className="relative">
+      {Array.from({ length: 4 }).map((_, index) => (
+        <svg
+          key={index}
+          width="8"
+          height="8"
+          viewBox="0 0 5 5"
+          className={clsx("absolute z-100", {
+            "rotate-90 bottom-0": index === 0,
+            "right-0 bottom-0": index === 1,
+            "rotate-180 top-0": index === 2,
+            "-rotate-90 top-0 right-0": index === 3,
+          })}
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line x1="4.5" y1="5" x2="4.5" stroke={strokeColor} />
+          <line x1="5" y1="4.5" y2="4.5" stroke={strokeColor} />
+        </svg>
+      ))}
+      <button
+        className={clsx(
+          "w-full bg-clip-padding bg-zinc-300/10 backdrop-filter backdrop-blur-xs border border-white/40 bg-opacity-5 h-10 px-3 text-sm",
+          className,
+        )}
+      >
+        {children}
+      </button>
+    </div>
+  );
+}
+
+function DoubleCard() {
+  return (
+    <div className="bg-white p-2 rounded-3xl">
+      {/* gray div */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 h-full bg-gray-200/50 p-2 rounded-2xl">
+        <div className="flex flex-col gap-4 justify-between bg-transparent border border-gray-200/80 py-6 px-5 rounded-xl">
+          <div className="flex flex-col gap-4">
+            <div>
+              <h1 className="text-lg text-neutral-400 tracking-wide font-medium">
+                Shaped by your choices,
+              </h1>
+              <h1 className="text-lg font-semibold">Driven by Your Vision</h1>
             </div>
 
-            <button className="w-fit text-[10px] tracking-widest text-white bg-neutral-800 hover:bg-neutral-800/95 h-9 px-4 rounded-full cursor-pointer">
-              Train your AI
-            </button>
+            <p className="text-xs text-neutral-500">
+              We will use that context when making future suggestions.
+            </p>
           </div>
 
-          {/* dark div */}
-          {/* figure out how to make img take entire box width, and also has the text in it's palce, after that it will take all the image width to height */}
-          <div className="relative py-6 px-5 rounded-xl text-neutral-800">
-            <div className="aspect-square">
-              <Image
-                src="/dark-img.png"
-                alt="ai-image"
-                fill
-                className="object-cover rounded-xl"
-              />
-            </div>
+          <button className="w-fit text-[10px] tracking-widest text-white bg-neutral-800 hover:bg-neutral-800/95 h-9 px-4 rounded-full cursor-pointer">
+            Train your AI
+          </button>
+        </div>
+
+        {/* dark div */}
+        {/* figure out how to make img take entire box width, and also has the text in it's palce, after that it will take all the image width to height */}
+        <div className="relative py-6 px-5 rounded-xl text-neutral-800">
+          <div className="aspect-square">
+            <Image
+              src="/dark-img.png"
+              alt="ai-image"
+              fill
+              className="object-cover rounded-xl"
+            />
           </div>
         </div>
       </div>

@@ -73,4 +73,31 @@ export const Components: Component = {
     ),
     code: rawCode("components/pxui/double-card.tsx"),
   },
+  "cutted-edge-border": {
+    name: "cutted-edge-border",
+    component: React.lazy(() =>
+      import("@repo/ui/cutted-edge-button").then((module) => ({
+        default: module.CuttedEdgeBorderButton,
+      })),
+    ),
+    code: rawCode("../../packages/ui/src/cutted-edge-button.tsx"),
+  },
+  "plus-edge-border": {
+    name: "plus-edge-border",
+    component: React.lazy(() =>
+      import("@repo/ui/plus-edge-button").then((module) => ({
+        default: module.PlusEdgeBorderButton,
+      })),
+    ),
+    code: rawCode("../../packages/ui/src/plus-edge-button.tsx"),
+  },
+  "simple-chat-input": {
+    name: "simple-chat-input",
+    component: React.lazy(() =>
+      import("@repo/ui/simple-chat-input").then((module) => ({
+        default: module.SimpleChatInput,
+      })),
+    ),
+    code: rawCode("../../packages/ui/src/simple-chat-input.tsx"),
+  },
 };

@@ -62,6 +62,30 @@
           "type": "registry:component"
         }
       ]
+    },
+		{
+      "name": "cutted-border",
+      "type": "registry:block",
+      "title": "Cutted Border",
+      "description": "A Cool looking Cutted Border Button",
+      "files": [
+        {
+          "path": "registry/pxui/ui/cutted-edge-border-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+		{
+      "name": "plus-border",
+      "type": "registry:block",
+      "title": "Plus Border",
+      "description": "A Cool looking Plus Border Button",
+      "files": [
+        {
+          "path": "registry/pxui/ui/plus-edge-border-button.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
 	]
 }

@@ -7,6 +7,7 @@ import { motion } from "motion/react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { containerVariant, itemsVariants } from "@/lib/animations";
 import { CodeBlock } from "@/components/code-block";
+import { SlashButton } from "@repo/ui/slash-button";
 import Link from "next/link";
 import { clsx } from "clsx";
 
@@ -62,14 +63,14 @@ export default function Home() {
                 <div className="flex items-center justify-center p-0">
                   <TabsTrigger
                     value="code"
-                    className="flex w-13 py-1 bg-transparent cursor-pointer rounded-none rounded-tl-full rounded-bl-full text-xs data-[state=active]:border-none data-[state=active]:shadow-sm"
+                    className="flex w-16 py-1 bg-transparent cursor-pointer rounded-none rounded-tl-full rounded-bl-full text-xs data-[state=active]:border-none data-[state=active]:shadow-sm"
                   >
                     Code
                   </TabsTrigger>
 
                   <TabsTrigger
                     value="preview"
-                    className="flex w-13 py-1 bg-transparent cursor-pointer rounded-none rounded-tr-full rounded-br-full text-xs data-[state=active]:border-none data-[state=active]:shadow-sm"
+                    className="flex w-16 py-1 bg-transparent cursor-pointer rounded-none rounded-tr-full rounded-br-full text-xs data-[state=active]:border-none data-[state=active]:shadow-sm"
                   >
                     Preview
                   </TabsTrigger>
@@ -124,8 +125,8 @@ export default function Home() {
 
             <TabsContent value="preview">
               <div className="flex-1 px-1 pb-1">
-                <div className="flex gap-4 h-[39rem] w-full bg-zinc-300/20 dark:bg-accent/20 rounded-2xl p-4">
-                  Preview
+                <div className="flex items-center justify-center gap-4 h-[39rem] w-full bg-zinc-300/20 dark:bg-accent/20 rounded-2xl p-4">
+                  <SlashButton>Hover me</SlashButton>
                 </div>
               </div>
             </TabsContent>

@@ -37,6 +37,14 @@ export const ROUTES: RoutesConfig = {
           title: "Aesthetic",
           href: "/docs/aesthetic",
         },
+        {
+          title: "Cutted Edge",
+          href: "/docs/cutted-edge-border",
+        },
+        {
+          title: "Plus Edge",
+          href: "/docs/plus-edge-border",
+        },
       ],
     },
     {
@@ -63,6 +71,10 @@ export const ROUTES: RoutesConfig = {
         {
           title: "Gradient Input",
           href: "/docs/gradient-chat-input",
+        },
+        {
+          title: "Simple Input",
+          href: "/docs/simple-chat-input",
         },
       ],
     },

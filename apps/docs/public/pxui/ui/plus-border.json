@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "plus-border",
+  "type": "registry:block",
+  "title": "Plus Border",
+  "description": "A Cool looking Plus Border Button",
+  "files": [
+    {
+      "path": "registry/pxui/ui/plus-edge-border-button.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport function PlusEdgeBorderButton({\n  children,\n  className,\n  strokeColor = \"white\",\n  ...props\n}: {\n  children: React.ReactNode;\n  className?: string;\n  strokeColor?: string;\n}) {\n  return (\n    <div className=\"relative\">\n      {Array.from({ length: 4 }).map((_, index) => (\n        <svg\n          key={index}\n          className={cn(\"absolute z-100\", {\n            \"rotate-90 -bottom-[5px] -left-[5px]\": index === 0,\n            \"-right-[5px] -bottom-[5px]\": index === 1,\n            \"rotate-180 -top-[5px] -left-[5px]\": index === 2,\n            \"-rotate-90 -top-[5px] -right-[5px]\": index === 3,\n          })}\n          width=\"10\"\n          height=\"10\"\n          viewBox=\"0 0 10 10\"\n          fill=\"none\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <path\n            d=\"M4.5 10L4.5 0.000732422\"\n            opacity={0.6}\n            stroke={strokeColor}\n          />\n          <path d=\"M10 4.5H0\" opacity={0.6} stroke={strokeColor} />\n        </svg>\n      ))}\n      <button\n        className={cn(\n          \"w-full bg-clip-padding bg-zinc-300/10 backdrop-filter backdrop-blur-xs border border-white/60 bg-opacity-5 h-10 px-3 text-sm cursor-pointer\",\n          className,\n        )}\n        {...props}\n      >\n        {children}\n      </button>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

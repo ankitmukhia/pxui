@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "simple-input",
+  "type": "registry:block",
+  "title": "Gradient Input",
+  "description": "A Cool looking Simple Input Box",
+  "files": [
+    {
+      "path": "registry/pxui/ui/simple-chat-input.tsx",
+      "content": "\"use client\";\n\nimport { useRef, useEffect, useState } from \"react\";\nimport { ImagePlusIcon, AudioLinesIcon, ArrowUpIcon } from \"lucide-react\";\n\nexport function SimpleChatInput() {\n  const inputRef = useRef<HTMLTextAreaElement | null>(null);\n  const [isSendActive, setIsSendActive] = useState(false);\n\n  useEffect(() => {\n    if (inputRef.current) {\n      inputRef.current.focus();\n    }\n  }, []);\n\n  return (\n    <form className=\"relative bg-white rounded-3xl p-2 border shadow-sm dark:shadow-neutral-300\">\n      <textarea\n        ref={inputRef}\n        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {\n          if (e.target.value.trim()) {\n            setIsSendActive(true);\n          } else {\n            setIsSendActive(false);\n          }\n        }}\n        placeholder=\"Message\"\n        spellCheck={false}\n        className=\"resize-none min-h-12 max-h-40 px-3 py-2 text-black field-sizing-content placeholder:font-semibold placeholder:text-neutral-400 w-3xl outline-0 foucus:ring-0\"\n      />\n\n      <div className=\"flex items-center justify-between\">\n        <button className=\"flex items-center gap-2 border bg-neutral-50 rounded-full py-[5px] px-3 text-neutral-500 font-semibold cursor-pointer\">\n          <ImagePlusIcon className=\"size-5\" /> Attach Image\n        </button>\n\n        {isSendActive ? (\n          <button className=\"flex items-center gap-2 border bg-neutral-100 rounded-full p-2 text-neutral-500 font-semibold inset-shadow-sm inset-shadow-white cursor-pointer\">\n            <ArrowUpIcon className=\"size-5\" />\n          </button>\n        ) : (\n          <button className=\"flex items-center gap-2 border bg-neutral-100 rounded-full py-[5px] px-3 text-neutral-500 font-semibold inset-shadow-sm inset-shadow-white cursor-pointer\">\n            <AudioLinesIcon className=\"size-5\" /> Voice\n          </button>\n        )}\n      </div>\n    </form>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gradient-input",
+  "type": "registry:block",
+  "title": "Gradient Input",
+  "description": "A Cool looking Gradient Input Box",
+  "files": [
+    {
+      "path": "registry/pxui/ui/gradient-chat-input.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useState, useRef } from \"react\";\nimport {\n  PlusIcon,\n  AudioLinesIcon,\n  PaperclipIcon,\n  SendIcon,\n} from \"lucide-react\";\n\nexport const GradientChatInput = () => {\n  const inputRef = useRef<HTMLTextAreaElement | null>(null);\n  const [isSendActive, setIsSendActive] = useState(false);\n\n  useEffect(() => {\n    if (inputRef.current) {\n      inputRef.current.focus();\n    }\n  }, []);\n\n  return (\n    <div className=\"bg-linear-to-r/longer from-pink-100 via-orange-100 to-orange-100 dark:from-purple-300 dark:via-blue-300 dark:to-blue-300 p-1 rounded-2xl shadow-2xl shadow-blue-200 dark:shadow-blue-200/60\">\n      <form className=\"bg-zinc-50 dark:bg-zinc-100 rounded-xl\">\n        <textarea\n          ref={inputRef}\n          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {\n            if (e.target.value.trim()) {\n              setIsSendActive(true);\n            } else {\n              setIsSendActive(false);\n            }\n          }}\n          placeholder=\"Ask anything\"\n          spellCheck={false}\n          className=\"resize-none bg-transparent check text-black px-3 placeholder:text-gray-400/60 placeholder:font-medium field-sizing-content min-h-8 max-h-80 p-2 w-full border-none outline-0 focus:ring-0\"\n        />\n\n        <div className=\"flex items-center justify-between px-2 pb-2\">\n          <div className=\"flex items-center gap-2\">\n            <button className=\"p-2 bg-zinc-50 rounded-lg border border-white shadow-sm cursor-pointer\">\n              <PaperclipIcon className=\"size-4 text-black\" />\n            </button>\n            <button className=\"p-2 bg-zinc-50 rounded-lg border border-white shadow-sm cursor-pointer\">\n              <PlusIcon className=\"size-4 text-black\" />\n            </button>\n          </div>\n\n          {isSendActive ? (\n            <button className=\"p-2 bg-zinc-50 rounded-lg border border-white shadow-sm cursor-pointer\">\n              <SendIcon className=\"size-4 text-black\" />\n            </button>\n          ) : (\n            <button className=\"p-2 bg-zinc-50 rounded-lg border border-white shadow-sm cursor-pointer\">\n              <AudioLinesIcon className=\"size-4 text-black\" />\n            </button>\n          )}\n        </div>\n      </form>\n    </div>\n  );\n};\n",
+      "type": "registry:component"
+    }
+  ]
+}

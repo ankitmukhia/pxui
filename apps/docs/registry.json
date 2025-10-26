@@ -86,6 +86,42 @@
           "type": "registry:component"
         }
       ]
+    },
+		{
+      "name": "gradient-input",
+      "type": "registry:block",
+      "title": "Gradient Input",
+      "description": "A Cool looking Gradient Input Box",
+      "files": [
+        {
+          "path": "registry/pxui/ui/gradient-chat-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+		{
+      "name": "simple-input",
+      "type": "registry:block",
+      "title": "Gradient Input",
+      "description": "A Cool looking Simple Input Box",
+      "files": [
+        {
+          "path": "registry/pxui/ui/simple-chat-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+		{
+      "name": "double-card",
+      "type": "registry:block",
+      "title": "Gradient Input",
+      "description": "A Cool looking Double Card",
+      "files": [
+        {
+          "path": "registry/pxui/ui/double-card.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
 	]
 }

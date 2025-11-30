@@ -16,8 +16,37 @@ const molle = Molle({
 });
 
 export const metadata: Metadata = {
-  title: "pxui",
-  description: "Daily actionalbe personal touched components",
+  title: "Pxui | Personal Touch UI Components",
+  description: "Components for daily actionable components",
+  metadataBase: new URL("https://pxui-docs.vercel.app"),
+  openGraph: {
+    title: "Pxui | Personal Touch UI Components",
+    description: "Components for daily actionable components",
+    type: "website",
+    locale: "en_US",
+    siteName: "Pxui",
+    images: [
+      {
+        url: "https://pxui-docs.vercel.app/og-pxui.png",
+        width: 1200,
+        height: 630,
+        alt: "pxui-img",
+      },
+    ],
+  },
+  twitter: {
+    title: "Pxui | Personal Touch UI Components",
+    description: "Components for daily actionable components",
+    card: "summary_large_image",
+    images: [
+      {
+        url: "https://pxui-docs.vercel.app/twitter-pxui.png",
+        width: 1200,
+        height: 630,
+        alt: "pxui-img",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

@@ -10,6 +10,7 @@ import {
 import { SunIcon, MoonIcon } from "@/lib/svg-icons";
 import { pricingCard } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { ArrowUpRightIcon } from "lucide-react";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { clsx } from "clsx";
 
@@ -40,9 +41,18 @@ function getCurrentTime() {
 export default function ExpPage() {
   return (
     <div className="flex h-screen bg-neutral-800 flex-col items-center justify-center px-2 xl:px-0">
-      <SimpleChatInput />
     </div>
   );
+}
+
+function ShadowButton() {
+	return (
+		<button className="group uppercase bg-white bg-linear-to-b from-[#cfcfcf] to-[#c0c0c0] p-[2px] rounded-xl border border-[c1c1c1] cursor-pointer">
+			<div className="flex items-center justify-center gap-2 bg-orange-300 group-hover:bg-linear-to-b group-hover:border-none group-hover:from-[#cfcfcf] group-hover:to-[#c0c0c0] bg-linear-to-b from-[#b5b5b5] to-[#e4e4e4] h-10 px-4 border-0 border-bg-[#e5e5e5] font-medium rounded-3xl text-neutral-800 transition-colors duration-100 ease-in">
+				Start Now <ArrowUpRightIcon className="size-5" />
+			</div>
+		</button>	 
+	)	
 }
 
 function SimpleChatInput() {

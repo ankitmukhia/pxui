@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint --max-warnings 0",
     "check-types": "tsc --noEmit",
-    "registry:build": "shadcn build --output ./public/pxui/ui"
+    "registry:build": "shadcn build --output ./public/pxui/ui",
+    "build:content": "contentlayer2 build"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",

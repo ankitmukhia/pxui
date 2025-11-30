@@ -1,6 +1,6 @@
 import { makeSource } from "contentlayer2/source-files";
 import rehypePreetyCode, { type Options } from "rehype-pretty-code";
-import { Ui } from "./content/definations/ui";
+import { Ui } from "./lib/definations/ui";
 
 const options: Options = {
   theme: "plastic",
